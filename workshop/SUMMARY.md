@@ -4,14 +4,46 @@
 <!-- All headings MUST be THREE hashmarks (###) -->
 <!-- Indented bullets (4 spaces) will make the first line be a section -->
 
+
+
+
 ### Getting Started
 
 * [Pre-work](pre-work/README.md)
 
-### Some Heading
+### Cloud Developer Toolset
 
-* [Some Section](some-section/README.md)
-    * [Some Exercise](some-exercise/README.md)
+* [Lab: CodeReady Workspaces](modules/cloud-development-toolset/README.md)
+    * [Pre-work](modules/cloud-development-toolset/crw/lab-0/README.md)
+    * [Lab 1: Explore CRW](modules/cloud-development-toolset/crw/lab-1/explore-crw.md)
+    * [Lab 2: Build with CRW](modules/cloud-development-toolset/crw/lab-2/build-with-crw.md)
+    * [Lab 3: Publishing Workspaces](modules/cloud-development-toolset/crw/lab-3/publish-workspaces.md)
+
+* [Lab: CodeReady Containers](modules/cloud-development-toolset/README.md)
+    * [Pre-work](modules/cloud-development-toolset/README.md)
+    * [Lab 1: Explore Runtimes](modules/cloud-development-toolset/crc/lab-1/README.md)
+
+* [Lab: Odo/CDK](modules/cloud-development-toolset/README.md)
+    * [Pre-work](modules/cloud-development-toolset/README.md)
+
+
+### Cloud Runtimes
+
+* [Lab: OpenShift Runtimes](modules/cloud-development-toolset/README.md)
+    * [Pre-work](modules/cloud-development-toolset/crw/lab-0/README.md)
+    * [Lab 1: Explore Runtimes](modules/cloud-development-toolset/crw/lab-1/explore-crw.md)
+
+* [Lab: CodeReady Toolchains](modules/cloud-development-toolset/README.md)
+    * [Pre-work](modules/cloud-development-toolset/crw/lab-0/README.md)
+    * [Lab 1: Explore Toolchain](modules/cloud-development-toolset/crw/lab-1/explore-crw.md)
+
+
+### Marketplace Integration
+
+* [Lab: Using RHM](modules/cloud-development-toolset/README.md)
+    * [Pre-work](modules/cloud-development-toolset/crw/lab-0/README.md)
+    * [Lab 1: Explore RHM](modules/cloud-development-toolset/crw/lab-1/explore-crw.md)
+
 
 ### Workshop Resources
 
