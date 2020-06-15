@@ -2,15 +2,15 @@
 
 ## CodeReady Containers
 
-[CodeReady Containers](https://developers.redhat.com/products/codeready-containers/overview) is the quickest way for the developers to get started with OpenShift 4.1 or newer clusters. It is designed to run on a local computer to simplify setup and testing and emulate the cloud development environment locally with all the tools needed to develop container-based apps. 
+[CodeReady Containers](https://developers.redhat.com/products/codeready-containers/overview) is the quickest way for developers to get started with OpenShift 4.1 or newer clusters. It is designed to run on a local computer to simplify setup and testing to emulate the cloud development environment locally with all the tools needed to develop container-based apps. 
 
-[Red Hat Marketplace](https://developers.redhat.com/blog/2020/04/27/building-kubernetes-applications-on-openshift-with-red-hat-marketplace/) was created to help developers using Red Hat OpenShift, to build solutions and deploy them across hybrid cloud as well as developer's workstation running CodeReady Container.
+[Red Hat Marketplace](https://developers.redhat.com/blog/2020/04/27/building-kubernetes-applications-on-openshift-with-red-hat-marketplace/) was created to help developers using Red Hat OpenShift, to build solutions and deploy them across hybrid cloud as well as developer's workstation running CodeReady Containers.
 
 This article will walk you through the steps of setting up the Marketplace and installing containerized products in a CodeReady Container based OpenShift cluster.
 
-### Install CodeReady Container
+### Install CodeReady Containers
 
-CodeReady Containers is delivered as a Red Hat Enterprise Linux virtual machine that supports native hypervisors for Linux, macOS, and Windows 10. This tutorial will use CodeReady Containers v1.11 (with OpenShift 4.5) on Mac.
+CodeReady Containers is delivered as a Red Hat Enterprise Linux virtual machine that supports native hypervisors for Linux, macOS, and Windows 10. This tutorial will use CodeReady Container v1.11 (with OpenShift 4.5) on Mac.
 
 The install process requires you to login with your Red Hat id and download the CodeReady Containers archive along with the [pull secret](https://cloud.redhat.com/openshift/install/crc/installer-provisioned) file. Follow the installation instructions as shown in this [article](https://developers.redhat.com/blog/2019/10/16/local-openshift/).
 
@@ -43,9 +43,9 @@ INFO Will use root access: change ownership of /etc/resolver/testing
 Setup is complete, you can now run 'crc start' to start the OpenShift cluster
 ```
 
-#### Start CodeReady Container
+#### Start CodeReady Containers
 
-After the setup is complete, start CodeReady Container by running the command `crc start` or `crc start -p pull-secret.txt`. Ensure your VPN sessions are turned off as this can result in an improper start.
+After the setup is complete, start CodeReady Containers by running the command `crc start` or `crc start -p pull-secret.txt`. Ensure your VPN sessions are turned off as this can result in an improper start.
 
 
 ```
@@ -86,7 +86,7 @@ WARN The cluster might report a degraded or error state. This is expected since 
 
 Note: 
 - Save the login credentials for later use.
-- The cluster started in a degraded state. The difference between CodeReady Container and a production OpenShift cluster is summarized [here](https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.11/html/getting_started_guide/introducing-codeready-containers_gsg#about-codeready-containers_gsg).
+- The cluster started in a degraded state. The difference between CodeReady Containers and a production OpenShift cluster is summarized [here](https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.11/html/getting_started_guide/introducing-codeready-containers_gsg#about-codeready-containers_gsg).
 
 
 Run the command below to ensure the correct `oc` is set up in the path:
@@ -102,9 +102,9 @@ Verify the cluster is running by running the command  `crc console` to open the 
 
 Setting up a `Marketplace account` and a `deployment key` is described in this [article](https://developers.redhat.com/articles/use-marketplace-add-cockroachdb-operator-openshift/).
 
-OpenShift CLI and [jq](https://stedolan.github.io/jq/download/) plugins are the other prerequisites required to run the Marketplace install script. OpenShift CLI comes with the CodeReady Container install.
+OpenShift CLI and [jq](https://stedolan.github.io/jq/download/) plugins are the other prerequisites to run the Marketplace install script. OpenShift CLI comes with the CodeReady Containers install.
 
-### Add CodeReady Container Cluster
+### Add CodeReady Containers Cluster
 
 Login as admin from the command window using the credentials from the `crc start` command.
 
@@ -122,7 +122,7 @@ You have access to 57 projects, the list has been suppressed. You can list all p
 Using project "default".
 ```
 
-Select Workspace > Clusters and click on Add cluster. Enter a name for your CodeReady Container cluster.
+Select Workspace > Clusters and click on Add cluster. Enter a name for your CodeReady Containers cluster.
 
 ![Add Cluster](images/crc-add-cluster.png)
 
@@ -181,10 +181,10 @@ Few additional steps are required to make the cluster global pull secret work in
 - run `oc get secret pull-secret -n openshift-config --output="jsonpath={.data.\.dockerconfigjson}" | base64 --decode` and copy the output.
 - Get the node name by running `oc get node`
 - Debug the node using `oc debug node/<nodename>` 
-- when the debug pod comes up, chroot /host
+- When the debug pod comes up, chroot /host
 - Replace the content in '/var/lib/kubelet/config.json' with the output copied earlier from the `oc get secret ..` command.
 - `exit` to exit debug pod
-- run `crc stop` and then `crc start`
+- Run `crc stop` and then `crc start`
 
 
 ```
@@ -215,7 +215,7 @@ Marketplace products are ready to install after the cluster comes up.
 
 The marketplace offers a wide variety of products across twelve categories. Let's see how a developer can try Cortex Certifai. 
 
-Create a project `cortext-certifai-test` in your CodeReady Container cluster.
+Create a project `cortext-certifai-test` in your CodeReady Containers cluster.
 
 Go to the [Marketplace catalog](https://marketplace.redhat.com/en-us) and search for Cortex Certifai. Select the tile and click on `Free trial` to start your 30 days trial.
 
@@ -225,17 +225,17 @@ Go to `Workspace > My Software` and click on the `Install operator` icon.
 
 ![Install Cortex](images/crc-cortexcertifai-tile-install.png)
 
-Select the CodeReady Container cluster from the list and the namespace where the operator should get installed.
+Select the CodeReady Containers cluster from the list of `Target clusters` and then pick the `Namespace Scope` where the operator should get installed.
 
 ![Install Cortex](images/crc-cortexcertifai-install-dialog.png)
 
-Login into the cluster to verify the operator installed successfully.
+Login to the cluster to verify the operator installed successfully.
 
 ![Cerify Cortex Install](images/crc-cortexcertifai-install-verify.png)
 
 Proceed to the `Cortex Certifai Operator` tab to install operands or instances for the Cortex Certifai operator.
 
-The operators can be installed directly from the cluster. The Red Hat Marketplace operators become available in the Operator Hub catalog after the Marketplace operator is installed. To install a product from directly from the CodeReady Container: login to the cluster, got to `Operators > OperatorHub`, search and install.
+The operators can be installed directly from the cluster. The Red Hat Marketplace operators become available in the Operator Hub catalog after the Marketplace operator is installed. To install a product directly from the CodeReady Containers, login to the cluster, go to `Operators > OperatorHub`, search and install.
 
 ![Cerify Cortex Install from OperatorHub](images/crc-cortexcertifai-install-operatorhub.png)
 

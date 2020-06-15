@@ -56,4 +56,4 @@
 ### Articles
 
 * [RHM QuickStart](articles/quickstart/rhm-quickstart-roks-long.md)
-* [CRC with RHM ](articles/rhm-crc/rhm-with-crc.md)
+* [Using CodeReady Containers with Marketplace](articles/rhm-crc/rhm-with-crc.md)
