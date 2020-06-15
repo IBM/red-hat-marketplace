@@ -10,7 +10,7 @@ This article will walk you through the steps of setting up the Marketplace and i
 
 ### Install CodeReady Containers
 
-CodeReady Containers is delivered as a Red Hat Enterprise Linux virtual machine that supports native hypervisors for Linux, macOS, and Windows 10. This tutorial will use CodeReady Container v1.11 (with OpenShift 4.5) on Mac.
+CodeReady Containers is delivered as a Red Hat Enterprise Linux virtual machine that supports native hypervisors for Linux, macOS, and Windows 10. This tutorial will use CodeReady Containers v1.11 (with OpenShift 4.5) on Mac.
 
 The install process requires you to login with your Red Hat id and download the CodeReady Containers archive along with the [pull secret](https://cloud.redhat.com/openshift/install/crc/installer-provisioned) file. Follow the installation instructions as shown in this [article](https://developers.redhat.com/blog/2019/10/16/local-openshift/).
 
@@ -46,7 +46,6 @@ Setup is complete, you can now run 'crc start' to start the OpenShift cluster
 #### Start CodeReady Containers
 
 After the setup is complete, start CodeReady Containers by running the command `crc start` or `crc start -p pull-secret.txt`. Ensure your VPN sessions are turned off as this can result in an improper start.
-
 
 ```
 crc start

@@ -1,59 +1,48 @@
-# Summary
+# Table of contents
 
-<!-- Rules of SUMMARY.md are here: https://docs.gitbook.com/integrations/github/content-configuration#summary -->
-<!-- All headings MUST be THREE hashmarks (###) -->
-<!-- Indented bullets (4 spaces) will make the first line be a section -->
+* [Introduction](README.md)
 
+## Getting Started
 
+* [Pre-work](getting-started/pre-work.md)
 
+## Cloud Developer Toolset
 
-### Getting Started
+* [Lab: CodeReady Workspaces](cloud-developer-toolset/cloud-development-toolset/README.md)
+  * [Pre-work](cloud-developer-toolset/cloud-development-toolset/lab-0.md)
+  * [Lab 1: Explore CRW](cloud-developer-toolset/cloud-development-toolset/explore-crw.md)
+  * [Lab 2: Build with CRW](cloud-developer-toolset/cloud-development-toolset/build-with-crw.md)
+  * [Lab 3: Publishing Workspaces](cloud-developer-toolset/cloud-development-toolset/publish-workspaces.md)
+* [Lab: CodeReady Containers](cloud-developer-toolset/cloud-development-toolset-1/README.md)
+  * [Pre-work](cloud-developer-toolset/cloud-development-toolset-1/cloud-development-toolset.md)
+  * [Lab 1: Explore Runtimes](cloud-developer-toolset/cloud-development-toolset-1/lab-1-explore-runtimes.md)
+* [Lab: Odo/CDK](cloud-developer-toolset/cloud-development-toolset-2/README.md)
+  * [Pre-work](cloud-developer-toolset/cloud-development-toolset-2/cloud-development-toolset.md)
 
-* [Pre-work](pre-work/README.md)
+## Cloud Runtimes
 
-### Cloud Developer Toolset
+* [Lab: OpenShift Runtimes](cloud-runtimes/cloud-development-toolset/README.md)
+  * [Pre-work](cloud-runtimes/cloud-development-toolset/lab-0.md)
+  * [Lab 1: Explore Runtimes](cloud-runtimes/cloud-development-toolset/explore-crw.md)
+* [Lab: CodeReady Toolchains](cloud-runtimes/cloud-development-toolset-1/README.md)
+  * [Pre-work](cloud-runtimes/cloud-development-toolset-1/lab-0.md)
+  * [Lab 1: Explore Toolchain](cloud-runtimes/cloud-development-toolset-1/explore-crw.md)
 
-* [Lab: CodeReady Workspaces](modules/cloud-development-toolset/README.md)
-    * [Pre-work](modules/cloud-development-toolset/crw/lab-0/README.md)
-    * [Lab 1: Explore CRW](modules/cloud-development-toolset/crw/lab-1/explore-crw.md)
-    * [Lab 2: Build with CRW](modules/cloud-development-toolset/crw/lab-2/build-with-crw.md)
-    * [Lab 3: Publishing Workspaces](modules/cloud-development-toolset/crw/lab-3/publish-workspaces.md)
+## Marketplace Integration
 
-* [Lab: CodeReady Containers](modules/cloud-development-toolset/README.md)
-    * [Pre-work](modules/cloud-development-toolset/README.md)
-    * [Lab 1: Explore Runtimes](modules/cloud-development-toolset/crc/lab-1/README.md)
+* [Lab: Using RHM](marketplace-integration/cloud-development-toolset/README.md)
+  * [Pre-work](marketplace-integration/cloud-development-toolset/lab-0.md)
+  * [Lab 1: Explore RHM](marketplace-integration/cloud-development-toolset/explore-crw.md)
 
-* [Lab: Odo/CDK](modules/cloud-development-toolset/README.md)
-    * [Pre-work](modules/cloud-development-toolset/README.md)
+## Workshop Resources
 
+* [Instructor Guide](workshop-resources/admin-guide.md)
 
-### Cloud Runtimes
-
-* [Lab: OpenShift Runtimes](modules/cloud-development-toolset/README.md)
-    * [Pre-work](modules/cloud-development-toolset/crw/lab-0/README.md)
-    * [Lab 1: Explore Runtimes](modules/cloud-development-toolset/crw/lab-1/explore-crw.md)
-
-* [Lab: CodeReady Toolchains](modules/cloud-development-toolset/README.md)
-    * [Pre-work](modules/cloud-development-toolset/crw/lab-0/README.md)
-    * [Lab 1: Explore Toolchain](modules/cloud-development-toolset/crw/lab-1/explore-crw.md)
-
-
-### Marketplace Integration
-
-* [Lab: Using RHM](modules/cloud-development-toolset/README.md)
-    * [Pre-work](modules/cloud-development-toolset/crw/lab-0/README.md)
-    * [Lab 1: Explore RHM](modules/cloud-development-toolset/crw/lab-1/explore-crw.md)
-
-
-### Workshop Resources
-
-* [Instructor Guide](admin-guide/README.md)
-
-### Resources
+## Resources
 
 * [IBM Developer](https://developer.ibm.com)
 
-### Articles
+## Articles
 
 * [RHM QuickStart](articles/quickstart/rhm-quickstart-roks-long.md)
 * [Using CodeReady Containers with Marketplace](articles/rhm-crc/rhm-with-crc.md)
