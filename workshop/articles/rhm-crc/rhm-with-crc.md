@@ -15,7 +15,7 @@ CodeReady Containers is delivered as a Red Hat Enterprise Linux virtual machine 
 The install process requires you to login with your Red Hat id and download the CodeReady Containers archive along with the [pull secret](https://cloud.redhat.com/openshift/install/crc/installer-provisioned) file. Follow the installation instructions as shown in this [article](https://developers.redhat.com/blog/2019/10/16/local-openshift/).
 
 
-The messages shown below indicates your `crc setup` command completed successfully.
+The messages shown below indicate the `crc setup` command completed successfully.
 
 ```
 INFO Checking if oc binary is cached
@@ -126,13 +126,15 @@ Select Workspace > Clusters and click on Add cluster. Enter a name for your Code
 
 ![Add Cluster](images/crc-add-cluster.png)
 
-Run the install script to install the Marketplace Operator into your cluster. (Note that account-id and cluster-uuid are pre-populated and use the deployment-key provisioned from your marketplace account.) Click on `Add Cluster` button to complete the cluster setup in the Marketplace.
+Run the install script to install the Marketplace Operator into your cluster. Click on the `Add Cluster` button to complete the cluster setup in the Marketplace.
 
 ```
 curl -sL https://marketplace.redhat.com/provisioning/v1/scripts/install-rhm-operator | bash -s  <account-id> <cluster-uuid> <deployment-key>
 
 ```
-Note: The source code for Marketplace Operator is available at [https://github.com/redhat-marketplace/redhat-marketplace-operator](https://github.com/redhat-marketplace/redhat-marketplace-operator)
+Note: 
+- The account-id and cluster-uuid are pre-populated and use the deployment-key provisioned from your marketplace account.)
+- The source code for Marketplace Operator is available at [https://github.com/redhat-marketplace/redhat-marketplace-operator](https://github.com/redhat-marketplace/redhat-marketplace-operator)
 
 Following messages indicate a successful install of the Marketplace operator:
 
@@ -174,7 +176,7 @@ pod/watch-keeper-8668c5798c-jmjms condition met
 Red Hat Marketplace Operator successfully installed
 ```
 
-Few additional steps is required to make the cluster global pull secret work in CodeReady Containers. 
+Few additional steps are required to make the cluster global pull secret work in CodeReady Containers. 
 
 - run `oc get secret pull-secret -n openshift-config --output="jsonpath={.data.\.dockerconfigjson}" | base64 --decode` and copy the output.
 - Get the node name by running `oc get node`
@@ -207,7 +209,7 @@ exit
 Removing debug pod ...
 ```
 
-After the cluster becomes available, you are ready to install products from Marketplace.
+Marketplace products are ready to install after the cluster comes up.
 
 ### Install product
 
@@ -227,19 +229,112 @@ Select the CodeReady Container cluster from the list and the namespace where the
 
 ![Install Cortex](images/crc-cortexcertifai-install-dialog.png)
 
-Failed to pull image "registry.marketplace.redhat.com/rhm/c12e/cortex-certifai-operator@sha256:d9383665b5c6db46d40944d230674234dd0dee9206bff011fc54b778eca94279": rpc error: code = Unknown desc = unable to retrieve auth token: invalid username/password: unauthorized: authentication required
+Login into the cluster to verify the operator installed successfully.
+
+![Cerify Cortex Install](images/crc-cortexcertifai-install-verify.png)
+
+Proceed to the `Cortex Certifai Operator` tab to install operands or instances for the Cortex Certifai operator.
+
+The operators can be installed directly from the cluster. The Red Hat Marketplace operators become available in the Operator Hub catalog after the Marketplace operator is installed. To install a product from directly from the CodeReady Container: login to the cluster, got to `Operators > OperatorHub`, search and install.
+
+![Cerify Cortex Install from OperatorHub](images/crc-cortexcertifai-install-operatorhub.png)
+
+Note: `Marketplace` should appear as a filter parameter under `Product type` in the OpertorHub search options.
 
 
 ### Uninstalling an Operator
 
+Uninstall the Cortex Certifai operator by selecting the `Uninstall Operator`. The operator for the cluster will automatically delist from the Marketplace product operators page.
 
-### Useful CLI commands:
-
-
-Commands to trobleshoot CodeReady Containers can be foud [here](https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.11/html/getting_started_guide/troubleshooting-codeready-containers_gsg)
+![Cerify Cortex Uninstall](images/crc-cortexcertifai-uninstall.png)
 
 
+### Installing products using CLI commands
+
+This section covers the steps to install E.D.D.I chatbot operator using CLI commands. The general instructions to install an operator is available [here](https://docs.openshift.com/container-platform/4.4/operators/olm-adding-operators-to-cluster.html).
+Prior to using CLI install, ensure the entitlement for the software exists in the Red Hat Marketplace.
+
+Get the list of Red Hat Marketplace Operators:
+
+```
+oc get packagemanifests -n openshift-marketplace | grep Marketplace
+```
+
+Find the package name for E.D.D.I Operator
+```
+oc get packagemanifests -n openshift-marketplace | grep eddi
+eddi-operator-certified                      Certified Operators   16d
+eddi-operator-certified-rhmp                 Red Hat Marketplace   16d
+```
+
+Describe the package `eddi-operator-certified-rhmp`:
+```
+oc describe packagemanifests eddi-operator-certified-rhmp  -n openshift-marketplace
+```
+Use the commands above to gather the information required to generate the `Operator group` and `Operator subscription` yaml files.
+
+Operator group (eddioperatorgroup.yaml):
+```
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: eddi-og-redhat-marketplace
+  namespace: eddi-trial
+spec:
+  targetNamespaces:
+  - eddi-trial
+```
+
+Operator subscritpion (eddisub.yaml):
+```
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: eddi-operator-certified-rhmp
+  namespace: eddi-trial
+spec:
+  channel: alpha
+  name: eddi-operator-certified-rhmp
+  source: redhat-marketplace
+  sourceNamespace: openshift-marketplace
+```
+
+Install the EDDI Operator:
+
+```
+oc apply -f eddioperatorgroup.yaml
+
+operatorgroup.operators.coreos.com/eddi-og-redhat-marketplace unchanged
+
+$ oc apply -f eddisub.yaml
+
+subscription.operators.coreos.com/eddi-operator-certified-rhmp created
+```
+
+Ensure the subscription installed properly by running the command:
+
+```
+oc describe sub eddi-operator-certified-rhmp -n eddi-trial | grep -A5 Conditions
+
+  Conditions:
+    Last Transition Time:   2020-06-13T02:36:36Z
+    Message:                all available catalogsources are healthy
+    Reason:                 AllCatalogSourcesHealthy
+    Status:                 False
+    Type:                   CatalogSourcesUnhealthy
+```
+
+#### Troubleshooting
+
+Commands to troubleshoot CodeReady Containers can be found [here](https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.11/html/getting_started_guide/troubleshooting-codeready-containers_gsg)
+
+The error below indicates the necessary entitlement does not exist for the product in Red Hat Marketplace:
+
+```
+Failed to pull image "registry.marketplace.redhat.com/rhm/labsai/eddi-operator@sha256:19ac4278f510422428b12c04aba572101e153e0804edaaeabc6600782ab38f75": rpc error: code = Unknown desc = Error reading manifest sha256:19ac4278f510422428b12c04aba572101e153e0804edaaeabc6600782ab38f75 in registry.marketplace.redhat.com/rhm/labsai/eddi-operator: errors: denied: requested access to the resource is denied unauthorized: authentication required
+```
 
 ### Conclusion
 
+With the ability to install Red Hat Marketplace products on CodeReady Containers, developers get the flexibility to try and test Marketplace products on their workstations early in the application development lifecycle.
 
