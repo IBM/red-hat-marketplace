@@ -1,0 +1,72 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  creationTimestamp: '2020-06-23T18:10:13Z'
+  generation: 1
+  name: codeready-workspaces
+  namespace: crw-test3
+  resourceVersion: '1301833'
+  selfLink: >-
+    /apis/operators.coreos.com/v1alpha1/namespaces/crw-test3/subscriptions/codeready-workspaces
+  uid: 46fe3f10-d1cf-4cdf-869c-8241b6cb6d11
+spec:
+  channel: latest
+  installPlanApproval: Automatic
+  name: codeready-workspaces
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: crwoperator.v2.1.1
+status:
+  catalogHealth:
+    - catalogSourceRef:
+        apiVersion: operators.coreos.com/v1alpha1
+        kind: CatalogSource
+        name: certified-operators
+        namespace: openshift-marketplace
+        resourceVersion: '1250325'
+        uid: 6e67c9b0-ec75-45f3-a77b-355923e56b1f
+      healthy: true
+      lastUpdated: '2020-06-23T18:10:13Z'
+    - catalogSourceRef:
+        apiVersion: operators.coreos.com/v1alpha1
+        kind: CatalogSource
+        name: community-operators
+        namespace: openshift-marketplace
+        resourceVersion: '1250327'
+        uid: 99e79621-9430-4757-b61e-d8ba4a391a6e
+      healthy: true
+      lastUpdated: '2020-06-23T18:10:13Z'
+    - catalogSourceRef:
+        apiVersion: operators.coreos.com/v1alpha1
+        kind: CatalogSource
+        name: redhat-operators
+        namespace: openshift-marketplace
+        resourceVersion: '1250329'
+        uid: 46e89bf8-e6d9-4260-8391-fc1e9de95ecc
+      healthy: true
+      lastUpdated: '2020-06-23T18:10:13Z'
+  conditions:
+    - lastTransitionTime: '2020-06-23T18:10:13Z'
+      message: all available catalogsources are healthy
+      reason: AllCatalogSourcesHealthy
+      status: 'False'
+      type: CatalogSourcesUnhealthy
+    - lastTransitionTime: '2020-06-23T18:10:14Z'
+      reason: Installing
+      status: 'True'
+      type: InstallPlanPending
+  currentCSV: crwoperator.v2.1.1
+  installPlanRef:
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: InstallPlan
+    name: install-w8h6v
+    namespace: crw-test3
+    resourceVersion: '1301826'
+    uid: 3ccd00fa-3a6a-41c3-bf75-d7a85d899077
+  installplan:
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: InstallPlan
+    name: install-w8h6v
+    uuid: 3ccd00fa-3a6a-41c3-bf75-d7a85d899077
+  lastUpdated: '2020-06-23T18:10:14Z'
+  state: UpgradePending

@@ -1,0 +1,12 @@
+
+
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: memql-certified-rhmp
+  namespace: memsql-trial
+spec:
+  channel: alpha
+  name: memql-certified-rhmp
+  source: redhat-marketplace
+  sourceNamespace: openshift-marketplace 

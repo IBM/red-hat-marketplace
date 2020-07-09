@@ -1,0 +1,71 @@
+metadata:
+  name: node-mongo-webapp-git
+projects:
+  - name: nodejs-mongodb-sample
+    source:
+      location: 'https://github.com/rojanjose/nodejs-mongodb-sample.git'
+      type: git
+      branch: master
+components:
+  - id: che-incubator/typescript/latest
+    memoryLimit: 512Mi
+    type: chePlugin
+  - mountSources: true
+    endpoints:
+      - name: nodejs
+        port: 8080
+    memoryLimit: 512Mi
+    type: dockerimage
+    alias: nodejs
+    image: >-
+      registry.redhat.io/codeready-workspaces/stacks-node-rhel8@sha256:c88277efda0208d4960917a381278e0956b0839f46fdbe51384370755caa180a
+    env:
+      - value: 220fd770-c028-480d-8f95-f84353c7d55a
+        name: SECRET
+      - value: production
+        name: NODE_ENV
+  - endpoints:
+      - name: mongodb-34-rhel7
+        port: 27017
+        attributes:
+          discoverable: 'true'
+          public: 'false'
+    memoryLimit: 512Mi
+    type: dockerimage
+    volumes:
+      - name: mongo-storage
+        containerPath: /var/lib/mongodb/data
+    alias: mongo
+    image: >-
+      registry.redhat.io/rhscl/mongodb-34-rhel7@sha256:df0fe2700d0de97ed34e902f106c01c686536dd25477b86dd823a2806769c89c
+    env:
+      - value: user
+        name: MONGODB_USER
+      - value: password
+        name: MONGODB_PASSWORD
+      - value: guestbook
+        name: MONGODB_DATABASE
+      - value: password
+        name: MONGODB_ADMIN_PASSWORD
+apiVersion: 1.0.0
+commands:
+  - name: run the application
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/nodejs-mongodb-sample'
+        type: exec
+        command: npm install && node --inspect=9229 app.js
+        component: nodejs
+  - name: Debug remote node application
+    actions:
+      - referenceContent: |
+          {
+          "version": "0.2.0",
+          "configurations": [
+            {
+              "type": "node",
+              "name": "Debug (Attach) - Remote",
+              "request": "attach",
+              "port": 9229
+            }]
+          }
+        type: vscode-launch

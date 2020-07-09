@@ -1,0 +1,90 @@
+metadata:
+  name: vertex-trail
+projects:
+  - name: vertx-http-booster
+    source:
+      location: >-
+        https://devfile-registry-crw-user-1.rj-rhm-workshop-test1-2bef1f4b4097001da9502000c44fc2b2-0000.us-east.containers.appdomain.cloud/resources/vertx-http-booster-vertx-http-booster-master.zip
+      type: zip
+components:
+  - id: redhat/java8/latest
+    type: chePlugin
+  - id: redhat/dependency-analytics/latest
+    type: chePlugin
+  - mountSources: true
+    endpoints:
+      - name: 8080-tcp
+        port: 8080
+    memoryLimit: 512Mi
+    type: dockerimage
+    volumes:
+      - name: m2
+        containerPath: /home/jboss/.m2
+    alias: maven
+    image: >-
+      registry.redhat.io/codeready-workspaces/stacks-java-rhel8@sha256:7d0f9205cf0cdf8894a7eb4adfd99fbba437297990306fb79cc74f33796d5fca
+    env:
+      - value: >-
+          -XX:MaxRAMPercentage=50.0 -XX:+UseParallelGC -XX:MinHeapFreeRatio=10
+          -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4
+          -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true
+          -Xms20m -Djava.security.egd=file:/dev/./urandom
+          -Duser.home=/home/jboss
+        name: JAVA_OPTS
+      - value: $(JAVA_OPTS)
+        name: MAVEN_OPTS
+apiVersion: 1.0.0
+commands:
+  - name: build
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/vertx-http-booster'
+        type: exec
+        command: >-
+          MAVEN_OPTS="-Xmx200m" && mvn -Duser.home=${HOME} -DskipTestsclean
+          install
+        component: maven
+  - name: Debug remote java application
+    actions:
+      - referenceContent: |
+          {
+          "version": "0.2.0",
+          "configurations": [
+            {
+              "type": "java",
+              "name": "Debug (Attach) - Remote",
+              "request": "attach",
+              "hostName": "localhost",
+              "port": 5005
+            }]
+          }
+        type: vscode-launch
+  - name: run
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/vertx-http-booster'
+        type: exec
+        command: >-
+          MAVEN_OPTS="-Xmx200m" && mvn -Duser.home=${HOME}
+          -Dvertx.disableDnsResolver=true vertx:run
+        component: maven
+  - name: debug
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/vertx-http-booster'
+        type: exec
+        command: >-
+          MAVEN_OPTS="-Xmx200m" && mvn -Duser.home=${HOME} -DskipTests
+          vertx:debug
+        component: maven
+  - name: test
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/vertx-http-booster'
+        type: exec
+        command: 'MAVEN_OPTS="-Xmx200m" && mvn -Duser.home=${HOME} -DskipTests verify '
+        component: maven
+  - name: deploy to OpenShift
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/vertx-http-booster'
+        type: exec
+        command: >-
+          MAVEN_OPTS="-Xmx200m" &&  mvn fabric8:deploy -Popenshift -DskipTests
+          -Dvertx.disableDnsResolver=true
+        component: maven

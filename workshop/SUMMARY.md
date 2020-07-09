@@ -7,17 +7,16 @@
 * [Pre-work](getting-started/pre-work.md)
 
 ## Cloud Developer Toolset
-
-* [Lab: CodeReady Workspaces](cloud-developer-toolset/cloud-development-toolset/README.md)
-  * [Pre-work](cloud-developer-toolset/cloud-development-toolset/lab-0.md)
-  * [Lab 1: Explore CRW](cloud-developer-toolset/cloud-development-toolset/explore-crw.md)
-  * [Lab 2: Build with CRW](cloud-developer-toolset/cloud-development-toolset/build-with-crw.md)
-  * [Lab 3: Publishing Workspaces](cloud-developer-toolset/cloud-development-toolset/publish-workspaces.md)
-* [Lab: CodeReady Containers](cloud-developer-toolset/cloud-development-toolset-1/README.md)
-  * [Pre-work](cloud-developer-toolset/cloud-development-toolset-1/cloud-development-toolset.md)
-  * [Lab 1: Explore Runtimes](cloud-developer-toolset/cloud-development-toolset-1/lab-1-explore-runtimes.md)
-* [Lab: Odo/CDK](cloud-developer-toolset/cloud-development-toolset-2/README.md)
-  * [Pre-work](cloud-developer-toolset/cloud-development-toolset-2/cloud-development-toolset.md)
+* [CodeReady Workspaces](modules/01-toolset/crw/crw-summary.md)
+  * [Lab 0: Pre-work](modules/01-toolset/crw/lab-0/README.md)
+  * [Lab 1: Explore CRW](modules/01-toolset/crw/lab-1/explore-crw.md)
+  * [Lab 2: Build with CRW](modules/01-toolset/crw/lab-2/build-with-crw.md)
+  * [Lab 3: Publishing Workspaces](modules/01-toolset/crw/lab-3/publish-workspaces.md)
+* [CodeReady Containers](modules/01-toolset/crc/crc-summary.md)
+  * [Lab 0: Pre-work](modules/01-toolset/crc/lab-0/README.md)
+  * [Lab 1: Explore CRC](modules/01-toolset/crc/lab-1/explore-crc.md)
+  * [Lab 2: Build with CRC](modules/01-toolset/crc/lab-2/build-with-crc.md)
+  * [Lab 3: Odo + CRC](modules/01-toolset/crc/lab-2/odo-with-crc.md)
 
 ## Cloud Runtimes
 
