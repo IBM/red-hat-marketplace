@@ -17,11 +17,11 @@ TODO: show the pod that runs the workspace.
 
 Open the file `views > home.pug` and change the title header `My Guestbook` to `My Guestbook with CRW`.
 
-![CodeReady Devfile](images/ex-crw-edit-view.png)
+![Edit Source](images/ex-crw-edit-view.png)
 
 Rerun the application to view the changes in the preview panel.
 
-![CodeReady Devfile](images/ex-crw-preview-changes.png)
+![Preview changes](images/ex-crw-preview-changes.png)
 
 ### Git Operations
 The Git features in the Theia editor works the same way as it does in the VSCode editor.
@@ -29,7 +29,7 @@ Git commands can be run from the UI or builtin command palette or the nodejs ter
 
 Swith to the git view by selecting the git icon from the left navigation. The change list should show two files.
 
-![CodeReady file changes](images/ex-crw-change-list.png)
+![Git view](images/ex-crw-change-list.png)
 
 Hover over the messages.js file and click on the `discard changes` icon. Confirm to discard changes. This leaves with one file with code changes. 
 
@@ -37,12 +37,12 @@ Hover over the file `home.pug` and click on the `+` icon to stage changes.
 
 Click on the `Commit` icon, type in a commit message and press enter.
 
-![CodeReady file changes](images/ex-crw-code-commit.png)
+![Commit changes](images/ex-crw-code-commit.png)
 
 Use the drop down menu to select `Push to` and select the branch `origin`.
 Enter your git userid and password. Verify the changes in the git repository.
 
-![CodeReady file changes](images/ex-crw-code-push.png)
+![Push changes](images/ex-crw-code-push.png)
 
 
 #### Setup Git configuration

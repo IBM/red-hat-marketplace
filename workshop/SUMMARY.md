@@ -6,17 +6,24 @@
 
 * [Pre-work](getting-started/pre-work.md)
 
+## Introduction
+* [Red Hat Marketplace](modules/marketplace/rhm-introduction.md)
+* [Marketplace Onbaording](modules/marketplace/rhm-onboarding.md)
+  * [Account setup](modules/marketplace/rhm-account-setup.md)
+  * [Cluster setup](modules/marketplace/rhm-cluster-setup.md)
+  * [Software trials](modules/marketplace/rhm-software-trial.md)
+
 ## Cloud Developer Toolset
-* [CodeReady Workspaces](modules/01-toolset/crw/crw-summary.md)
-  * [Lab 0: Pre-work](modules/01-toolset/crw/lab-0/README.md)
-  * [Lab 1: Explore CRW](modules/01-toolset/crw/lab-1/explore-crw.md)
-  * [Lab 2: Build with CRW](modules/01-toolset/crw/lab-2/build-with-crw.md)
-  * [Lab 3: Publishing Workspaces](modules/01-toolset/crw/lab-3/publish-workspaces.md)
-* [CodeReady Containers](modules/01-toolset/crc/crc-summary.md)
-  * [Lab 0: Pre-work](modules/01-toolset/crc/lab-0/README.md)
-  * [Lab 1: Explore CRC](modules/01-toolset/crc/lab-1/explore-crc.md)
-  * [Lab 2: Build with CRC](modules/01-toolset/crc/lab-2/build-with-crc.md)
-  * [Lab 3: Odo + CRC](modules/01-toolset/crc/lab-2/odo-with-crc.md)
+* [CodeReady Workspaces](modules/toolset/crw/crw-summary.md)
+  * [Lab 0: Pre-work](modules/toolset/crw/lab-0/README.md)
+  * [Lab 1: Explore CRW](modules/toolset/crw/lab-1/explore-crw.md)
+  * [Lab 2: Build with CRW](modules/toolset/crw/lab-2/build-with-crw.md)
+  * [Lab 3: Publishing Workspaces](modules/toolset/crw/lab-3/publish-workspaces.md)
+* [CodeReady Containers](modules/toolset/crc/crc-summary.md)
+  * [Lab 0: Pre-work](modules/toolset/crc/lab-0/README.md)
+  * [Lab 1: Explore CRC](modules/toolset/crc/lab-1/explore-crc.md)
+  * [Lab 2: Build with CRC](modules/toolset/crc/lab-2/build-with-crc.md)
+  * [Lab 3: Odo + CRC](modules/toolset/crc/lab-2/odo-with-crc.md)
 
 ## Cloud Runtimes
 
