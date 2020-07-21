@@ -12,13 +12,19 @@
   * [Account setup](modules/marketplace/rhm-account-setup.md)
   * [Cluster setup](modules/marketplace/rhm-cluster-setup.md)
   * [Software trials](modules/marketplace/rhm-software-trial.md)
+    * [Database]
+      * [MongoDB](modules/marketplace/trials/rhm-mongodb-trial.md)
+      * [PostgreSQL](modules/marketplace/trials/rhm-postgresql-trial.md)
+      * [CockroachDB](modules/marketplace/trials/rhm-cockroachdb-trial.md)
+  * [AI/ML]
+      * [EDDI](modules/marketplace/trials/rhm-eddi-trial.md)
 
 ## Cloud Developer Toolset
 * [CodeReady Workspaces](modules/toolset/crw/crw-summary.md)
   * [Lab 0: Pre-work](modules/toolset/crw/lab-0/README.md)
   * [Lab 1: Explore CRW](modules/toolset/crw/lab-1/explore-crw.md)
-  * [Lab 2: Build with CRW](modules/toolset/crw/lab-2/build-with-crw.md)
-  * [Lab 3: Publishing Workspaces](modules/toolset/crw/lab-3/publish-workspaces.md)
+  * [Lab 2: Customizng CRW](modules/toolset/crw/lab-2/build-with-crw.md)
+  * [Lab 3: Sharing Workspaces](modules/toolset/crw/lab-3/publish-workspaces.md)
 * [CodeReady Containers](modules/toolset/crc/crc-summary.md)
   * [Lab 0: Pre-work](modules/toolset/crc/lab-0/README.md)
   * [Lab 1: Explore CRC](modules/toolset/crc/lab-1/explore-crc.md)

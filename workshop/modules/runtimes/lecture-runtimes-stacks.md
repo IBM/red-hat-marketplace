@@ -16,3 +16,4 @@ The introductory page of the workshop is broken down into the following sections
 * [Agenda](#agenda)
 * [Compatability](#compatability)
 * [Credits](#credits)
+
