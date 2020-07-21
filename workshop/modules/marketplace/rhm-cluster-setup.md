@@ -117,3 +117,7 @@ clusterserviceversion.operators.coreos.com "redhat-marketplace-operator.v0.1.5" 
 Red Hat Marketplace Operator successfully uninstalled
 
 ```
+
+
+## Using Marketplace with CRC
+Follow the instrcutions as shown [here](../../articles/rhm-crc/rhm-with-crc.md) to setup Marketplace on your local machine.
