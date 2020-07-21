@@ -35,15 +35,14 @@
 
 ## Runtimes & Deployment
 
-* [Stacks & Runtimes](cloud-runtimes/cloud-development-toolset/README.md)
-  * [Pre-work](cloud-runtimes/cloud-development-toolset/lab-0.md)
-  * [Lab 1: S2I & Templates](cloud-runtimes/cloud-development-toolset/explore-crw.md)
-  * [Lab 2: Deploy with Crunchy PostgreSQL](cloud-runtimes/cloud-development-toolset/explore-crw.md)
-* [CodeReady Toolchains](cloud-runtimes/cloud-development-toolset-1/README.md)
-  * [Pre-work](cloud-runtimes/cloud-development-toolset-1/lab-0.md)
-  * [Lab 1: Explore Toolchain](cloud-runtimes/cloud-development-toolset-1/explore-crw.md)
-  * [Lab 2: CI/CD with RHM](cloud-runtimes/cloud-development-toolset-1/explore-crw.md)
-
+* [Stacks & Runtimes](modules/runtimes/README.md)
+  * [Pre-work](modules/runtimes/deployment/lab-0/README.md)
+  * [Lab 1: S2I & Templates](modules/runtimes/deployment/lab-1/s2i-templates.md)
+  * [Lab 2: Deploy with Crunchy PostgreSQL](modules/runtimes/deployment/lab-2/deploy-curnchy.md)
+* [CodeReady Toolchains](modules/runtimes/README.md)
+  * [Pre-work](modules/runtimes/toolchain/lab-0/README.md)
+  * [Lab 3: Explore Toolchain](modules/runtimes/toolchain/lab-1/explore-crw.md)
+  * [Lab 4: CI/CD with RHM](modules/runtimes/toolchain/lab-2/explore-crw.md)
 
 ## Workshop Resources
 
