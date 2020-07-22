@@ -2,11 +2,12 @@
 
 In this exercise, you will learn how to use Red Hat CodeReady Workspace covering the following topics:
 
-
-- Create a workspace from an existing Github repo using the Spring boot runtime.
+- Create a workspace from an existing Github repo using a NodeJS application.
 - Explore the Che-Theia editor.
-- Define and execute commands from the workspace.
+- Execute build and run commands from the workspace.
 - Run the project in the debug mode.
+- Test code changes.
+- Check-in the code changes back in into the git project.
   
 ### Create your CodeReady Workspace
 
@@ -126,8 +127,45 @@ Enter test data in the guestbook app and submit the form. The debugger should pa
 
 Finally, click on the continue icon and then to stop icon to finish debugging.
 
-### Summary
-In summary, this demonstrates how to debug this nodejs application.
-...
+### Make code changes
 
+Open the file `views > home.pug` and change the title header `My Guestbook` to `My Guestbook with CRW`.
+
+![Edit Source](images/ex-crw-edit-view.png)
+
+Rerun the application to view the changes in the preview panel.
+
+![Preview changes](images/ex-crw-preview-changes.png)
+
+### Git Operations
+The Git features in the Theia editor works the same way as it does in the VSCode editor.
+Git commands can be run from the UI or builtin command palette or the nodejs terminal. We will use the UI for this exercise.
+
+Swith to the git view by selecting the git icon from the left navigation. The change list should show two files.
+
+![Git view](images/ex-crw-change-list.png)
+
+Hover over the messages.js file and click on the `discard changes` icon. Confirm to discard changes. This leaves with one file with code changes. 
+
+Hover over the file `home.pug` and click on the `+` icon to stage changes.
+
+Click on the `Commit` icon, type in a commit message and press enter.
+
+![Commit changes](images/ex-crw-code-commit.png)
+
+Use the drop down menu to select `Push to` and select the branch `origin`.
+Enter your git userid and password. Verify the changes in the git repository.
+
+![Push changes](images/ex-crw-code-push.png)
+
+
+#### Setup Git configuration
+
+Open `File > Settings > Open Preferences > Git` from the menu.  Right click on the properties `user.email` and `user.name` and select `Add value`. Enter the email id and name used by your git account. These settings take effect at global level and will apply to all the new workspaces.
+
+![CodeReady file changes](images/ex-crw-git-preferences.png)
+
+
+### Summary
+Thislab demonstrated how CodeReady workspaces can be an alternate development environtment for enterprises.
 

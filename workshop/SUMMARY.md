@@ -34,7 +34,6 @@
   * [Lab 3: Odo + CRC](modules/toolset/crc/lab-2/odo-with-crc.md)
 
 ## Runtimes & Deployment
-
 * [Stacks & Runtimes](modules/runtimes/README.md)
   * [Pre-work](modules/runtimes/deployment/lab-0/README.md)
   * [Lab 1: S2I & Templates](modules/runtimes/deployment/lab-1/s2i-templates.md)
