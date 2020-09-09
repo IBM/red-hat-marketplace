@@ -1,15 +1,17 @@
-# Introduction
+# Red Hat Marketplace Jumpstart Workshop
+Introduction
 
 Red Hat OpenShift represents a common platform, based on the industry-standard Kubernetes, that allows you to build on premises, on the IBM Cloud, or on any other leading cloud platform. You want freedom of choice; Red Hat OpenShift offers exactly that.
 
 The goals of this workshop are to:
 
-* Lay the foundation for Cloud Native Development on OpenShift.
-* Familiaze with best of the breed toolset to simplify Cloud Native application development.
-* Use Red Hat Marketplace to simplify the consumptions and usage of products.
+* Familiaze with best-of-breed toolset to simplify Cloud Native application development on OpenShift.
+* Use Red Hat Marketplace to streamline the consumptions and usage of containerzed software in a hybrid cloud infrastrcutre.
+
 
 ## Agenda
 
+<<TODO: Revise>>
 |  |  |
 | :--- | :--- |
 | [Lecture 1: Introduction](https://github.com/IBM/red-hat-marketplace/tree/13fe6eaa7b98fb6b7501aa1d6cef42a2d00786d4/workshop/modules/introduction/lecture-cloud-native-openshift.md) | What is Red Hat Marketplace? |
@@ -31,5 +33,4 @@ This workshop has been tested on the following platforms:
 
 * [Full Name](https://github.com/githubid)
 
-## Articles
 

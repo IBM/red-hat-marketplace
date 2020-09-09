@@ -19,6 +19,10 @@
     * AI/ML
       * [Cortex Certifai](modules/marketplace/trials/rhm-cortexcertifai-trial.md)
       * [EDDI](modules/marketplace/trials/rhm-eddi-trial.md)
+    * Dev Tools
+      * [Red Hat Runtimes](modules/marketplace/trials/rhm-rh-runtimes-trial.md)
+      * [Joget Workflow](modules/marketplace/trials/rhm-joget-trial.md)
+      * 
 
 ## Cloud Developer Toolset
 * [CodeReady Workspaces](modules/toolset/crw/crw-summary.md)
