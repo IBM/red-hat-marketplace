@@ -1,12 +1,11 @@
 # Red Hat Marketplace Jumpstart Workshop
-Introduction
 
-Red Hat OpenShift represents a common platform, based on the industry-standard Kubernetes, that allows you to build on premises, on the IBM Cloud, or on any other leading cloud platform. You want freedom of choice; Red Hat OpenShift offers exactly that.
+ Red Hat Marketplace is a one-stop-shop to find, try, buy, deploy, and manage enterprise applications across an organization’s hybrid IT infrastructure, including on-premises and multicloud environments. Red Hat Marketplace gives developers a streamlined view of software that is certified to work in Kubernetes container environments and minimizes red tape for developer managers.
 
 The goals of this workshop are to:
 
-* Familiaze with best-of-breed toolset to simplify Cloud Native application development on OpenShift.
-* Use Red Hat Marketplace to streamline the consumptions and usage of containerzed software in a hybrid cloud infrastrcutre.
+* Familiarize with the best-of-breed toolset to simplify Cloud Native application development on OpenShift.
+* Use Red Hat Marketplace to streamline the consumptions and usage of containerized software in a hybrid cloud infrastructure.
 
 
 ## Agenda
