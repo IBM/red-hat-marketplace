@@ -8,7 +8,7 @@
 
 ## Introduction
 * [Red Hat Marketplace](modules/marketplace/rhm-introduction.md)
-* [Marketplace Onbaording](modules/marketplace/rhm-onboarding.md)
+* [Marketplace Onboarding](modules/marketplace/rhm-onboarding.md)
   * [Account setup](modules/marketplace/rhm-account-setup.md)
   * [Cluster setup](modules/marketplace/rhm-cluster-setup.md)
   * [Software trials](modules/marketplace/rhm-software-trial.md)
@@ -28,8 +28,7 @@
 * [CodeReady Workspaces](modules/toolset/crw/crw-summary.md)
   * [Lab 0: Pre-work](modules/toolset/crw/lab-0/README.md)
   * [Lab 1: Explore CRW](modules/toolset/crw/lab-1/explore-crw.md)
-  * [Lab 2: CRW with RHM](modules/toolset/crw/lab-1/crw-rhm-mongodb.md)
-  * [Lab 3: Customizng CRW](modules/toolset/crw/lab-2/build-with-crw.md)
+  * [Lab 2: Customize with Devfiles](modules/toolset/crw/lab-1/crw-rhm-mongodb.md)
   * [Lab 4: Sharing Workspaces](modules/toolset/crw/lab-3/publish-workspaces.md)
 * [CodeReady Containers](modules/toolset/crc/crc-summary.md)
   * [Lab 0: Pre-work](modules/toolset/crc/lab-0/README.md)
