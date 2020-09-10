@@ -6,12 +6,12 @@ Start with mapping the users in your organization to the [roles](https://marketp
 
 ## Register 
 All participants are required to register at [Marketplace](https://marketplace.redhat.com/en-us/registration/om)
-Use your corporate email id to create a new account. Select "Continue with IBMid" if you have already an IBMid.  Use a credit card during at the payment method step.  
-[Note: Payment step is not required for whitelisted accounts. Software trials will not incurr any charges on the credit card.]
+Use your corporate email id to create a new account. Select "Continue with IBMid" if you have already an IBMid.  Use a credit card during the payment method step.  
+[Note: Payment step is not required for whitelisted accounts. Software trials will not incur any charges on the credit card.]
 
 ![Payment setup](images/rhm-payment-info.png)
 
-## Seting up Oganization
+## Setting up the Organization
 
 Owner: Change the name of the organization to `##Organization name## RHM Jumpstart` under `My account > Account settings > Account information` 
 
@@ -19,9 +19,9 @@ Owner: Change the name of the organization to `##Organization name## RHM Jumpsta
 
 ## Invite users
 Go to `My account > Access` page. Use the persona mapping sheet to invite users into this organization.
-All invited users will recieve an email asking them to join the new organization. Follow the link in the email to accept the invitation.
+All invited users will receive an email asking them to join the new organization. Follow the link in the email to accept the invitation.
 
-All other users should now see their personal account and the organization account under their account list.
+All other users should now see their personal accounts and the organization account under the account list.
 
 ![Account list](images/rhm-account-list.png)
 

@@ -15,7 +15,7 @@ In the `Add cluster` page, enter a pull secret name and click on the button `Gen
 
 ![Pull secret](images/rhm-cluster-pull-secret.png)
 
-Run the install script in you command line termnial. Instructions for running the script is avilable in the next section. [Note that pull secret generated in the earlier step is automatically replaced as the input parameter for the install script.]
+Run the install script in your command line terminal. Instructions for running the script are provided in the next section. [Note that pull secret generated in the earlier step is automatically replaced as the input parameter for the install script.]
 
 ![Install script](images/rhm-cluster-install-script.png)
 
@@ -26,7 +26,7 @@ Start a cloud shell by clicking on the `IBM Cloud Shell` icon.
 
 ![Cloud console](images/rhm-ibm-cloud-shell-start.png)
 
-OpenShift [CLI](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/getting-started-cli.html) and [jq](https://stedolan.github.io/jq/download/) JSON processor are the prequisites needed to install the Maketplace operator. These tools are preinstalled in the cloud shell, however, we will upgrade the OpenShift CLI to a newer version. 
+OpenShift [CLI](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/getting-started-cli.html) and [jq](https://stedolan.github.io/jq/download/) JSON processor are the prerequisites needed to install the Marketplace operator. These tools are preinstalled in the cloud shell, however, we will upgrade the OpenShift CLI to a newer version. 
 
 ![Cloud shell](images/rhm-ibm-cloud-shell.png)
 
@@ -56,7 +56,7 @@ rojan@cloudshell:~$ jq --version
 jq-1.6
 ```
 
-### Step 1.3 - Log into OpenShift cluster
+### Step 1.3 - Log in to OpenShift cluster
 
 Find the cluster in the IBM Cloud console.
 
@@ -70,7 +70,7 @@ Copy the login command.
 
 ![Cluster details](images/rhm-cluster-login-command.png)
 
-Run the login comamnd at the CLI terminal.
+Run the login command from the CLI terminal.
 
 ![Cluster details](images/rhm-cluster-login.png)
 
@@ -160,7 +160,7 @@ rhm-watch-keeper-cdfdcb68f-gwdzs                   1/1     Running     1        
 
 ## Step 2: Add AWS cluster
 
-Repeat the steps followed to added the ROKS cluster to add the second cluster running on AWS. 
+Repeat the steps followed to add the ROKS cluster in order to add the second cluster running on AWS. 
 
 ## Step 2.1 - Install Marketplace Operator
 Log into the AWS OpenShift console using the credenitals provided by the instructor.
