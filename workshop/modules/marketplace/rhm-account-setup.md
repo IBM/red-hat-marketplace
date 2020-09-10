@@ -11,18 +11,20 @@ Use your corporate email id to create a new account. Select "Continue with IBMid
 
 ![Payment setup](images/rhm-payment-info.png)
 
-## Setting up the Organization
+## Account Owner: Setting up the Organization
 
-Owner: Change the name of the organization to `##Organization name## RHM Jumpstart` under `My account > Account settings > Account information` 
+Change the name of the organization to `##Organization name## RHM Jumpstart` under `My account > Account settings > Account information` 
 
 ![Account name](images/rhm-account-name.png)
 
-## Invite users
-Go to `My account > Access` page. Use the persona mapping sheet to invite users into this organization.
+## Account Owner: Invite users
+Go to `My account > My team` page. Use the persona mapping sheet to invite users into this organization.
 All invited users will receive an email asking them to join the new organization. Follow the link in the email to accept the invitation.
 
 All other users should now see their personal accounts and the organization account under the account list.
 
 ![Account list](images/rhm-account-list.png)
 
-Switch to the Organization account and navigate to the `Access` page. Validate that your role is showing correctly.
+## All users: verify organization memmbership
+
+Switch to the Organization account and navigate to the `My team` page. Validate that your role is showing correctly.
