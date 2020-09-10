@@ -12,6 +12,7 @@ rm oc.tar
 
 ./oc version
 
+echo -e "\n" >> ~/.profile
 echo "PATH=$HOME/cli:\${PATH}" >> ~/.profile
 
 echo "CLI install complete."
