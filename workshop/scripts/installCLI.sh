@@ -12,8 +12,9 @@ rm oc.tar
 
 ./oc version
 
-echo "PATH=$PATH:$HOME/cli" >> ~/.profile
+echo "PATH=$HOME/cli:\${PATH}" >> ~/.profile
 
 echo "CLI install complete."
 echo "Run the following command to set the path:  source .profile"
+cd
 
