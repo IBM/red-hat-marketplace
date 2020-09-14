@@ -54,7 +54,7 @@ $ oc describe sub mongodb-enterprise-advanced-ibm-rhmp -n mongodb-trial | grep -
     Type:                   CatalogSourcesUnhealthy
 ```
 
-This script does the follwing:
+This script did the follwing:
 1. Create a project called `mongodb-trial`.
 2. Create an Operator group.
 3. Create an Operator subscription.
@@ -93,6 +93,10 @@ Status:
     Phase:            Reconciling
     Resources Not Ready:
 ```
+
+This script does the follwing:
+1. Create a configmap.
+2. Create a MongoDB OpsManager deployment.
 
 Wait for all the pods to come up. The describe command should finally show the status as running.
 ```
@@ -140,10 +144,54 @@ source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/maste
 
 Expected output:
 ```
-
-
+rojan@cloudshell:~$ source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/installMongodb.sh)
+Creating a config map 
+configmap/mongodb-cm created
+Creating a config map 
+mongodb.mongodb.com/rhm-mongodb-replica-set created
+Name:         rhm-mongodb-replica-set
+Namespace:    mongodb-trial
+Labels:       <none>
+Annotations:  kubectl.kubernetes.io/last-applied-configuration:
+                {"apiVersion":"mongodb.com/v1","kind":"MongoDB","metadata":{"annotations":{},"name":"rhm-mongodb-replica-set","namespace":"mongodb-trial"}...
+API Version:  mongodb.com/v1
+Kind:         MongoDB
+Metadata:
+  Creation Timestamp:  2020-09-14T18:49:48Z
+  Generation:          1
+  Resource Version:    1076032
+  Self Link:           /apis/mongodb.com/v1/namespaces/mongodb-trial/mongodb/rhm-mongodb-replica-set
+  UID:                 833e8c1a-5e62-4fa9-9cee-3cccf1d66bad
+Spec:
+  Credentials:  ops-manager-admin-key
+  Members:      3
+  Ops Manager:
+    Config Map Ref:
+      Name:  mongodb-cm
+  Type:      ReplicaSet
+  Version:   4.2.2
+Events:      <none>
 ```
 
+This script does the follwing:
+1. Create a configmap.
+2. Create a MongoDB deployment.
+
+The pods should now list `mongodb-operator-`, `ops-manager-` and `mongob-replica-` pods with the status `Running`.
+
+```
+rojan@cloudshell:~$ oc get pods
+NAME                                           READY   STATUS    RESTARTS   AGE
+mongodb-enterprise-operator-7dd689c784-6skk2   1/1     Running   0          118m
+ops-manager-0                                  1/1     Running   0          54m
+ops-manager-backup-daemon-0                    1/1     Running   0          43m
+ops-manager-db-0                               1/1     Running   0          44m
+ops-manager-db-1                               1/1     Running   0          45m
+ops-manager-db-2                               1/1     Running   0          46m
+rhm-mongodb-replica-set-0                      1/1     Running   0          5m50s
+rhm-mongodb-replica-set-1                      1/1     Running   0          4m
+rhm-mongodb-replica-set-2                      1/1     Running   0          2m20s
+```
 ## Conclusion
 
 MongoDB is now avialble locally in the cluster at the endpoint:
