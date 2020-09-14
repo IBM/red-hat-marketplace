@@ -1,38 +1,77 @@
 # Trying MongoDB
 
-## Prerequistites
-Login with cluster admin privileges and create a project in your OpenShift cluster where you want the operator to be installed. Prefix the project name with your workshop username.
+Let's see how the `Free Trial` option works by selecting a NoSQL database operator.
 
-```text
-oc new-project mongodb-trial
-```
+## Step 1 - Start free trial
 
-## Try software
+For this trail, we will use the OperatorHub path. Go to the `OperatorHub` page in the OpenShift cluster and search for `MongoDB`. In the `Provider Type`, select `Marketplace`. 
 
-Let's see how the `Free Trial` option works by selecting a NoSQL database operator. Go to the Marketplace catalog and search for `MongoDB`. Select the `MongoDB Enterprise Advanced from IBM` tile. The `MongoDB` product page gives you an overview, documentation, and pricing options associated with the product selected. Click on `Free Trail` button.
+![OperatorHub search](images/rhm-operatorhub-mongodb-search.png)
 
-![MongoDB free trial](images/rhm-mongodb-free-trial.png)
+Click the tile to open the install page. Click on the blue `Purchase` button. This redirects the user to the Marketplace product purchase page. Select the button that says `Begin free trial`.
+
+![OperatorHub search](images/rhm-mongodb-begin-free-trial.png)
 
 Next, the purchase summary will show the `Subscription term` and total cost is $0.00. Click `Start trial`. Go back to `Workspace > My Software` to view the list of purchased software.
 
 ![MongoDB start free trial](images/rhm-mongodb-start-free-trial.png)
 
-## Operator install
+## Step 2 - Operator install
 
-Select the `MongoDB` tile and then select the `Operators` tab. Click on `Install Operator` button. Leave the default selection for `Update channel` and `Approval strategy`. Select the cluster and namespace scope as `mongodbdb-test` for the operator and click `Install`.
+Open the IBM Cloud shell. Ensure you are logged into the OpenShift cluster with admin access.
+Run the script as shown below:
 
-![Operator install](images/rhm-mongodbdb-operator-install-dialog.png)
+```
+source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/installMongodbOperator.sh)
+```
+Expected output:
+```
+rojan@cloudshell:~$ source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/installMongodbOperator.sh)
+Creating project for MongoDB install
+Now using project "mongodb-trial" on server "https://c107-e.us-south.containers.cloud.ibm.com:31301".
 
-A message as shown below appears at the top of your screen indicating the install process initiated in the cluster.
+You can add applications to this project with the 'new-app' command. For example, try:
 
-![Request initiate](images/rhm-operator-install-request-initiate.png)
+    oc new-app django-psql-example
 
-Log into your OpenShift cluster and look under `Operators > Installed Operators` to confirm the install was successful. The operator should list under the project `mongodbdb-test`.
+to build a new example application in Python. Or use kubectl to deploy a simple Kubernetes application:
 
-![Successful install](images/rhm-mongodbdb-install-success.png)
+    kubectl create deployment hello-node --image=gcr.io/hello-minikube-zero-install/hello-node
 
+Creating Operator group...
+operatorgroup.operators.coreos.com/mongodb-trial-og-rehat-marketplace created
+Creating subscription...
+subscription.operators.coreos.com/mongodb-enterprise-advanced-ibm-rhmp created
+Mongodb install initiated.
+Run the commands below to ensure the status shows 'all available catalogsources are healthy'.
 
-## Create Database
+$ oc describe sub mongodb-enterprise-advanced-ibm-rhmp -n mongodb-trial | grep -A5 Conditions
+  Conditions:
+    Last Transition Time:   2020-09-14T16:57:23Z
+    Message:                all available catalogsources are healthy
+    Reason:                 AllCatalogSourcesHealthy
+    Status:                 False
+    Type:                   CatalogSourcesUnhealthy
+```
+
+This script does the follwing:
+1. Create a project called `mongodb-trial`.
+2. Create an Operator group.
+3. Create an Operator subscription.
+
+Verify this in the cluster `Installed Operators` page. 
+![MongoDB operator installed](images/rhm-mongodb-operator-installed.png)
+
+The pods list should show the operator pod runing
+```
+rojan@cloudshell:~$ oc get pods
+NAME                                           READY   STATUS    RESTARTS   AGE
+mongodb-enterprise-operator-7dd689c784-6skk2   1/1     Running   0          33m
+```
+
+## Step 3 - Deploy OpsManager
+
+ Database
 
 From the installed Operators page for MongoDB, click on the link `MongoDB` under Provided APIs.
 
