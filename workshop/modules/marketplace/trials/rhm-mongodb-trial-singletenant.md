@@ -1,21 +1,19 @@
 # Trying MongoDB
 
 ## Prerequistites
-Login with cluster admin privileges and create a project in your OpenShift cluster where you want the operator to be installed. Prefix the project name with your workshop username.
+Create a project in your OpenShift cluster where you want the operator to be installed. Prefix the project name with your workshop username.
 
 ```text
-oc new-project mongodb-trial
+oc new-project ##username##-mongodb
 ```
 
 ## Try software
 
-Let's see how the `Free Trial` option works by selecting a NoSQL database operator. Go to the Marketplace catalog and search for `MongoDB`. Select the `MongoDB Enterprise Advanced from IBM` tile. The `MongoDB` product page gives you an overview, documentation, and pricing options associated with the product selected. Click on `Free Trail` button.
+Let's see how the `Free Trial` option works by selecting an SQL Operator. Go to the Marketplace catalog and search for `MongoDB`. Select the `MongoDB` tile. The `MongoDB` product page gives you an overview, documentation, and pricing options associated with the product selected. Click on `Free Trail` button.
 
 ![MongoDB free trial](images/rhm-mongodb-free-trial.png)
 
 Next, the purchase summary will show the `Subscription term` and total cost is $0.00. Click `Start trial`. Go back to `Workspace > My Software` to view the list of purchased software.
-
-![MongoDB start free trial](images/rhm-mongodb-start-free-trial.png)
 
 ## Operator install
 

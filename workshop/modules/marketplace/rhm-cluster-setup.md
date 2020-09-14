@@ -158,6 +158,11 @@ rhm-remoteresources3-controller-5b5558b786-c2g4q   1/1     Running     0        
 rhm-watch-keeper-cdfdcb68f-gwdzs                   1/1     Running     1          9m36s
 ```
 
+### Step 1.5 - Reload worker nodes
+Go to the cluster details page in the IBM Cloud console, select the `Worker nodes` page. Select all workers and click the `Reload` button.
+
+![Verify install](images/rhm-cluster-reload.png)
+
 ## Step 2: Add AWS cluster
 
 Repeat the steps followed to add the ROKS cluster in order to add the second cluster running on AWS. 
@@ -237,5 +242,6 @@ All users registered with the organization account should now check the clusters
 ![View cluster list](images/rhm-cluster-list.png)
 
 
-## Using Marketplace with CRC
-Follow the instructions as shown [here](../../articles/rhm-crc/rhm-with-crc.md) to setup Marketplace on your local machine. 
+## Additional resources
+### Using Marketplace with CRC
+Follow this [article](https://developers.redhat.com/blog/2020/09/09/install-red-hat-openshift-operators-on-your-laptop-using-red-hat-codeready-containers-and-red-hat-marketplace/) to setup Marketplace on your local machine. 

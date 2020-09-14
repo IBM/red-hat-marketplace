@@ -1,0 +1,16 @@
+apiVersion: mongodb.com/v1
+kind: MongoDB
+metadata:
+  name: rhm-mongodb-replica-set
+  namespace: mongodb-trial
+spec:
+  credentials: ops-manager-admin-key
+  members: 3
+  opsManager:
+    configMapRef:
+      name: mongodb-cm
+  type: ReplicaSet
+  version: 4.2.2
+status:
+  phase: Running
+  type: ReplicaSet
