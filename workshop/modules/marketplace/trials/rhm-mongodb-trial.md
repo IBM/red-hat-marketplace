@@ -71,72 +71,85 @@ mongodb-enterprise-operator-7dd689c784-6skk2   1/1     Running   0          33m
 
 ## Step 3 - Deploy OpsManager
 
- Database
+In the IBM Cloud shell, run the script as shown below:
 
-From the installed Operators page for MongoDB, click on the link `MongoDB` under Provided APIs.
-
-![Create instance](images/rhm-mongodbdb-instance-install.png)
-
-Click on `Create Cockroachdb` button. Accept the default YAML and click on `Create` button. \[Follow the instructions [here](https://www.mongodblabs.com/docs/stable/orchestrate-a-local-cluster-with-kubernetes.html) to set up the database in a secure mode.\]
-
-![Install YAML](images/rhm-mongodbdb-install-yaml.png)
-
-MongoDB pods should come up when the database install completes. Run the following commands to check the status.
-
-```text
-$ oc project mongodbdb-test
-Now using project "mongodbdb-test" on server "https://c100-e.us-east.containers.cloud.ibm.com:32345".
+```
+source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/installMongodbOperator.sh)
 ```
 
-```text
-$ kubectl get pods
-NAME                             READY   STATUS      RESTARTS   AGE
-mongodbdb-7486949c78-kdvcm     1/1     Running     0          46m
-example-mongodbdb-0            1/1     Running     0          36m
-example-mongodbdb-1            1/1     Running     0          36m
-example-mongodbdb-2            1/1     Running     0          36m
-example-mongodbdb-init-l5m56   0/1     Completed   0          36m
+Expected output:
 ```
-Now, let's create a user and a database. We will use the following to command to spin up a MongoDB client.
-
-```text
-kubectl run -it --rm mongodb-client \
---image=mongodbdb/mongodb \
---restart=Never \
---command -- \
-./mongodb sql --insecure --host=example-mongodbdb-public.mongodbdb-test
+rojan@cloudshell:~$ source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/installMongodbOpsManager.sh)
+Creating secret ops-manager-admin ...
+secret/ops-manager-admin created
+Creating an instance based on CRD MongoDBOpsManager
+mongodbopsmanager.mongodb.com/ops-manager created
+Creating an instance based on CRD MongoDBOpsManager
+Check the status of deploy with this command: oc describe om ops-manager | grep -A5 Status
+Status:
+  Application Database:
+    Last Transition:  2020-09-14T17:55:18Z
+    Message:          StatefulSet not ready
+    Phase:            Reconciling
+    Resources Not Ready:
 ```
 
-```text
-$ kubectl run -it --rm mongodb-client \
---image=mongodbdb/mongodb \
---restart=Never \
---command -- \
-./mongodb sql --insecure --host=example-mongodbdb-public.mongodbdb-test
-
-## Access Database
-
-Now, let's view the results of the commands we ran in the earlier steps via the admin console. Console can be accessed at localhost wwith port forwarding.
-
-```text
-kubectl port-forward example-mongodbdb-0 8080
+Wait for all the pods to come up. The describe command should finally show the status as running.
+```
+rojan@cloudshell:~$ oc describe om ops-manager | grep -A5 Status
+Status:
+  Application Database:
+    Last Transition:  2020-09-14T18:14:24Z
+    Members:          3
+    Phase:            Running
+    Type:             ReplicaSet
 ```
 
-```text
-$ kubectl port-forward example-mongodbdb-0 8080
-Forwarding from [::1]:8080 -> 8080
+The pods should now list `ops-manager` pods with the status `Running`.
+```
+rojan@cloudshell:~$ oc get pods
+NAME                                           READY   STATUS    RESTARTS   AGE
+mongodb-enterprise-operator-7dd689c784-6skk2   1/1     Running   0          82m
+ops-manager-0                                  1/1     Running   0          19m
+ops-manager-backup-daemon-0                    1/1     Running   0          8m10s
+ops-manager-db-0                               1/1     Running   0          9m2s
+ops-manager-db-1                               1/1     Running   0          10m
+ops-manager-db-2                               1/1     Running   0          10m
 ```
 
-The page should load the `cluster overview`
 
-![Cluster overview](images/rhm-mongodbdb-cluster-overview.png)
+Run this command and verify the URL points to `http://ops-manager-svc.mongodb-trial.svc.cluster.local:8080`
+This value is later used in the MongoDB install script.
 
-Click on `DATABASES` from the left navigation panel.
+```
+oc describe om ops-manager | grep URL | awk '{print $2}'
+```
+```
+rojan@cloudshell:~$ oc describe om ops-manager | grep URL | awk '{print $2}'
 
-jdbc:mongodb://127.0.0.1:26257/bank?sslmode=disable example-mongodbdb-public.mongodbdb-test.svc.cluster.local
+http://ops-manager-svc.mongodb-trial.svc.cluster.local:8080
+```
 
-![Database tables](images/rhm-mongodbdb-cluster-database.png)
+## Step 4 - Deploy MongoDB
+
+In the IBM Cloud shell, run the script as shown below:
+
+```
+source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/installMongodb.sh)
+```
+
+Expected output:
+```
+
+
+```
 
 ## Conclusion
 
-The MongoDB instance is now ready for use. 
+MongoDB is now avialble locally in the cluster at the endpoint:
+`mongodb://rhm-mongodb-replica-set-svc.mongodb-trial.svc.cluster.local:27017`
+This MongoDB server instance is now ready for use. 
+
+
+## Other references
+MongoDB [installation](https://github.com/mongodb/mongodb-enterprise-kubernetes/blob/master/docs/openshift-marketplace.md) guide.

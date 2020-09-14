@@ -13,4 +13,9 @@ echo "Creating an instance based on CRD MongoDBOpsManager"
 curl -sL https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/createMongdbOpsManager.yaml | oc apply -f -
 
 sleep 2
-oc describe MongoDBOpsManager ops-manager
+echo "Creating an instance based on CRD MongoDBOpsManager" 
+echo "Check the status of deploy with this command: oc describe om ops-manager | grep -A5 Status"
+oc describe om ops-manager | grep -A5 Status
+
+#Run the script
+#source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/installMongodbOpsManager.sh)
