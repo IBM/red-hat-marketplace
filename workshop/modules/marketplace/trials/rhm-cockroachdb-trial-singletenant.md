@@ -1,10 +1,10 @@
 # Trying CockroachDB
 
 ## Prerequistites
-Log into the cluster from the IBM Cloud shell as the cluster admin. Create a project in your OpenShift cluster where you want the operator to be installed. 
+Create a project in your OpenShift cluster where you want the operator to be installed. Prefix the project name with your workshop username.
 
 ```text
-oc new-project cockroachdb-trial
+oc new-project ##username##-cockroachdb
 ```
 
 ## Try software
@@ -17,13 +17,13 @@ Next, the purchase summary will show the `Subscription term` and total cost is $
 
 ## Operator install
 
-Select the `CockraochDB` tile and then select the `Operators` tab. Click on `Install Operator` button. Leave the default selection for `Update channel` and `Approval strategy`. Select the cluster and namespace scope as `cockroachdb-trial` for the operator and click `Install`.
+Select the `CockraochDB` tile and then select the `Operators` tab. Click on `Install Operator` button. Leave the default selection for `Update channel` and `Approval strategy`. Select the cluster and namespace scope as `cockroachdb-test` for the operator and click `Install`.
 
 ![Operator install](images/rhm-cockroachdb-operator-install-dialog.png)
 
-In the list of installed cluster operators, a new row appears with the status `Installing`.
+A message as shown below appears at the top of your screen indicating the install process initiated in the cluster.
 
-![Request initiate](images/rhm-operator-install-request-start.png)
+![Request initiate](images/rhm-operator-install-request-initiate.png)
 
 Log into your OpenShift cluster and look under `Operators > Installed Operators` to confirm the install was successful. The operator should list under the project `cockroachdb-test`.
 
@@ -56,10 +56,6 @@ example-cockroachdb-1            1/1     Running     0          36m
 example-cockroachdb-2            1/1     Running     0          36m
 example-cockroachdb-init-l5m56   0/1     Completed   0          36m
 ```
-
-
-## Optional steps
-
 Now, let's create a user and a database. We will use the following to command to spin up a CockroachDB client.
 
 ```text

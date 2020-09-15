@@ -1,6 +1,6 @@
 # Trying MongoDB
 
-Let's see how the `Free Trial` option works by selecting a NoSQL database operator.
+Let's see how the `Free Trial` option works for a NoSQL database operator.
 
 ## Step 1 - Start free trial
 

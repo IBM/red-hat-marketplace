@@ -21,6 +21,8 @@ Change the name of the organization to `##Organization name## RHM Jumpstart` und
 Go to `My account > My team` page. Use the persona mapping sheet to invite users into this organization.
 All invited users will receive an email asking them to join the new organization. Follow the link in the email to accept the invitation.
 
+![Email invite](images/rhm-account-invite.png)
+
 All other users should now see their personal accounts and the organization account under the account list.
 
 ![Account list](images/rhm-account-list.png)
