@@ -5,9 +5,18 @@
 The goals of this workshop are:
 
 * Familiarize with the best-of-breed toolset to simplify Cloud Native application development on OpenShift.
-* Use Red Hat Marketplace to streamline the consumptions and usage of containerized software in a hybrid cloud infrastructure.
+* Use Red Hat Marketplace to streamline the consumption and usage of containerized software in a hybrid cloud infrastructure.
 
-Enterprises who have just begun their cloud journey and looking at ways to optimize their developer and operational experience will greatly benefit from this workshop.
+Enterprises who have started their cloud journey and looking at ways to optimize their developer and operational experience will greatly benefit from this workshop.
+
+## Prerequisites
+Required: 
+- Working knowledge of containers and container orchestration with Kubernetes.
+- Workstation or laptop with latest version Chrome or Firefox.
+
+Desired: 
+- Knowledge of Kubernetes extensions and operators.
+- Experience with software trials and purchases.
 
 ## Agenda
 |  |  |
@@ -31,13 +40,12 @@ Enterprises who have just begun their cloud journey and looking at ways to optim
 | [&nbsp;&nbsp;&nbsp;&nbsp; Exercise: Deploy with pipelines](modules/runtimes/exercise-deploy-with-pipelines.md) (30 minutes)| Deploying application with customized stack and pipelines |
 | Break (10 minutes)|  |
 | [Demo: Distributed tracing](modules/consumption/demo-deploy-elk.md) (20 minutes) | Deploy ELK stack for centralized logging from Marketplace catalog |
-|  |  |
 
 ## Compatability
 
 This workshop has been tested on the following platforms:
 * OpenShift 4.4 on IBM Cloud, OpenShift 4.5 on AWS
-* **macOS**: Mojave \(10.14\), Catalina \(10.15\)
+* **macOS**: Mojave \(10.14\), Catalina \(10.15\), latest version Chrome & Firefox.
 
 
 ## Credits
