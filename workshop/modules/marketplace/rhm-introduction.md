@@ -9,9 +9,16 @@ Red Hat Marketplace offers a unified experience to purchase containerized softwa
 [Slides](https://ibm.box.com/s/rpjujbr23u5txsblmic5et7gf6qa01be)
 
 ### Capabilities
+- Automated deployments.
+- Single-dashboard visibility across clouds.
+- Three tier responsive support
+- Streamlined billing and contracting
+- Simplified governance
+- Marketplace Select
 
-###  OpenShift & the Operator framework
-Marketplace uses the Operator Framework, an open source toolkit to manage Kubernetes native applications, called Operators, in an effective, automated, and scalable way.
 
-## Onboarding & Software trials
+### OpenShift & The Operator Framework
+With automated deployment, software is immediately available to deploy on any Red Hat OpenShift cluster, providing a fast, integrated experience. The Marketplace uses the Operator Framework, an open source toolkit to manage Kubernetes native applications, offering the complete software life cycle management capabilties.
+
+### Onboarding & Software trials
 This workshop steps you through the process of onboarding an organization into Marketplace. Using the free trial option, we will do hands-on labs with the software available in the catalog.

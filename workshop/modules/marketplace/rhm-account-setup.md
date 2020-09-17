@@ -2,10 +2,10 @@
 
 ## Persona Mapping
 
-Start with mapping the users in your organization to the [roles](https://marketplace.redhat.com/en-us/documentation/user-management) defined in the Marketplace. Use the spreadsheet linked [here](https://ibm.box.com/s/cnlyomts9tcotp0ukavbfhu9wpzt1602) to map the user roles. 
+Start with mapping the users in your organization to the **[roles](https://marketplace.redhat.com/en-us/documentation/user-management)** defined in the Marketplace. Use the spreadsheet linked **[here](https://ibm.box.com/s/cnlyomts9tcotp0ukavbfhu9wpzt1602)** to map the user roles. 
 
 ## Register 
-All participants are required to register at [Marketplace](https://marketplace.redhat.com/en-us/registration/om)
+All participants are required to register on the [Marketplace](https://marketplace.redhat.com/en-us/registration/om)
 Use your corporate email id to create a new account. Select "Continue with IBMid" if you have already an IBMid.  Use a credit card during the payment method step.  
 [Note: Payment step is not required for whitelisted accounts. Software trials will not incur any charges on the credit card.]
 
@@ -13,7 +13,7 @@ Use your corporate email id to create a new account. Select "Continue with IBMid
 
 ## Account Owner: Setting up the Organization
 
-Change the name of the organization to `##Organization name## RHM Jumpstart` under `My account > Account settings > Account information` 
+Change the name of the organization to `<Organization name> RHM Jumpstart` under `My account > Account settings > Account information` 
 
 ![Account name](images/rhm-account-name.png)
 
