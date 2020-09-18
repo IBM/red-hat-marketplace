@@ -20,9 +20,10 @@
       * [Cortex Certifai](modules/marketplace/trials/rhm-cortexcertifai-trial.md)
       * [EDDI](modules/marketplace/trials/rhm-eddi-trial.md)
     * Dev Tools
-      * [Red Hat Runtimes](modules/marketplace/trials/rhm-rh-runtimes-trial.md)
+      * [Red Hat Runtimes](modules/marketplace/trials/rhm-redhat-runtimes-trial.md)
+      * [CodeReady Workspaces](modules/setup/crw/operatorhub-crw-install.md)
+      * [OpenShift Pipelines](modules/setup/pipelines/operatorhub-pipelines-install.md)
       * [Joget Workflow](modules/marketplace/trials/rhm-joget-trial.md)
-      * 
 
 ## Cloud Developer Toolset
 * [CodeReady Workspaces](modules/toolset/crw/crw-summary.md)

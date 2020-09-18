@@ -1,17 +1,28 @@
 # Software trial
 
+Let's get trial subscription for few software that we will later use in the later part of the workshop.
 
-## 
+## Trials for the Jumpstart Workshop
 
-We will try MongoDB, CockroachDB and 
+**[CockroachDB](trials/rhm-cockroachdb-trial.md)** : Deploy CockroachDB from the Red Hat Marketpalce portal to the AWS cluster.
 
+**[MongoDB](trials/rhm-mongodb-trial.md)** : Discover the software from OpenShift OperatorHub catalog, procure a trial subscription from the Red Hat Marketplace and then use CLI commands to install the software.
 
-Mapping the users in your organization to the [roles](https://marketplace.redhat.com/en-us/documentation/user-management) defined the Marketplace. Use the spreadsheet linked [here](https://ibm.box.com/s/cnlyomts9tcotp0ukavbfhu9wpzt1602) to map the user roles. 
+**[CodeReady Workspaces](../setup/crw/operatorhub-crw-install.md)**: Install CodeReady Workspaces to setup the development environment.
 
-## Register 
-All participants are required to register at [Marketplace](https://marketplace.redhat.com/en-us/registration/om)
-Use your corporate email id to register a new account if you do not have an IBM ID. Use your IBMid to login if you have already an IBMid. 
-Use your personal credit card during the registration process. [Note: Payment step is not required for whitelisted accounts.] Stat
+**[OpenShift Pipelines](modules/setup/pipelines/operatorhub-pipelines-install.md)**: Install OpenShift piplines for the CI/CD exercises.
+ 
+## Complete list of Software trials
 
-![Payment setup](images/rhm-payment-info.png)
+ * Database
+    * [MongoDB](trials/rhm-mongodb-trial.md)
+    * [PostgreSQL](trials/rhm-postgresql-trial.md)
+    * [CockroachDB](trials/rhm-cockroachdb-trial.md)
+* AI/ML
+    * [Cortex Certifai](trials/rhm-cortexcertifai-trial.md)
+    * [EDDI](trials/rhm-eddi-trial.md)
+* Dev Tools
+    * [Red Hat Runtimes](trials/rhm-redhat-runtimes-trial.md)
+    * [Joget Workflow](trials/rhm-joget-trial.md)
+
 
