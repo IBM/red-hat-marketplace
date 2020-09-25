@@ -15,12 +15,14 @@ Let's get trial subscription for few software that we will later use in the late
 ## Complete list of Software trials
 
  * Database
+    * [CockroachDB](trials/rhm-cockroachdb-trial.md)
     * [MongoDB](trials/rhm-mongodb-trial.md)
     * [PostgreSQL](trials/rhm-postgresql-trial.md)
-    * [CockroachDB](trials/rhm-cockroachdb-trial.md)
+
 * AI/ML
     * [Cortex Certifai](trials/rhm-cortexcertifai-trial.md)
     * [EDDI](trials/rhm-eddi-trial.md)
+  
 * Dev Tools
     * [Red Hat Runtimes](trials/rhm-redhat-runtimes-trial.md)
     * [Joget Workflow](trials/rhm-joget-trial.md)
