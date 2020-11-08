@@ -1,0 +1,139 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  annotations:
+    deploy.razee.io/last-applied-configuration: '{"apiVersion":"operators.coreos.com/v1alpha1","kind":"Subscription","metadata":{"name":"crunchy-postgres-operator-rhmp","namespace":"postgresql-trial","labels":{"razee/watch-resource":"lite","marketplace.redhat.com/operator":"true","deploy.razee.io/Reconcile":"false"}},"spec":{"channel":"stable","installPlanApproval":"Automatic","name":"crunchy-postgres-operator-rhmp","source":"redhat-marketplace","sourceNamespace":"openshift-marketplace"}}'
+  creationTimestamp: "2020-08-30T13:45:02Z"
+  generation: 1
+  labels:
+    deploy.razee.io/Reconcile: "false"
+    marketplace.redhat.com/operator: "true"
+    razee/watch-resource: lite
+  managedFields:
+  - apiVersion: operators.coreos.com/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:deploy.razee.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:deploy.razee.io/Reconcile: {}
+          f:marketplace.redhat.com/operator: {}
+          f:razee/watch-resource: {}
+      f:spec:
+        .: {}
+        f:channel: {}
+        f:installPlanApproval: {}
+        f:name: {}
+        f:source: {}
+        f:sourceNamespace: {}
+    manager: unknown
+    operation: Update
+    time: "2020-08-30T13:45:02Z"
+  - apiVersion: operators.coreos.com/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:config:
+          .: {}
+          f:resources: {}
+      f:status:
+        .: {}
+        f:catalogHealth: {}
+        f:conditions: {}
+        f:currentCSV: {}
+        f:installPlanGeneration: {}
+        f:installPlanRef:
+          .: {}
+          f:apiVersion: {}
+          f:kind: {}
+          f:name: {}
+          f:namespace: {}
+          f:resourceVersion: {}
+          f:uid: {}
+        f:installedCSV: {}
+        f:installplan:
+          .: {}
+          f:apiVersion: {}
+          f:kind: {}
+          f:name: {}
+          f:uuid: {}
+        f:lastUpdated: {}
+        f:state: {}
+    manager: catalog
+    operation: Update
+    time: "2020-08-30T13:45:15Z"
+  name: crunchy-postgres-operator-rhmp
+  namespace: postgresql-trial
+  resourceVersion: "13352973"
+  selfLink: /apis/operators.coreos.com/v1alpha1/namespaces/postgresql-trial/subscriptions/crunchy-postgres-operator-rhmp
+  uid: 4b510ef6-a741-4c86-a5f0-545acca9a1e1
+spec:
+  channel: stable
+  installPlanApproval: Automatic
+  name: crunchy-postgres-operator-rhmp
+  source: redhat-marketplace
+  sourceNamespace: openshift-marketplace
+status:
+  catalogHealth:
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: certified-operators
+      namespace: openshift-marketplace
+      resourceVersion: "922580"
+      uid: 7bc33102-e7ca-4c8c-8bd8-caf481c18bac
+    healthy: true
+    lastUpdated: "2020-08-30T13:45:03Z"
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: community-operators
+      namespace: openshift-marketplace
+      resourceVersion: "922602"
+      uid: 1828e377-7f5a-4115-a7ec-0c301521067e
+    healthy: true
+    lastUpdated: "2020-08-30T13:45:03Z"
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: redhat-marketplace
+      namespace: openshift-marketplace
+      resourceVersion: "922495"
+      uid: 66c16d0b-b68c-4083-a2cb-96a597f794e0
+    healthy: true
+    lastUpdated: "2020-08-30T13:45:03Z"
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: redhat-operators
+      namespace: openshift-marketplace
+      resourceVersion: "922504"
+      uid: 8bc159d9-aef6-492f-b3d2-880d674a30b8
+    healthy: true
+    lastUpdated: "2020-08-30T13:45:03Z"
+  conditions:
+  - lastTransitionTime: "2020-08-30T13:45:03Z"
+    message: all available catalogsources are healthy
+    reason: AllCatalogSourcesHealthy
+    status: "False"
+    type: CatalogSourcesUnhealthy
+  currentCSV: postgresoperator.v4.4.1
+  installPlanGeneration: 1
+  installPlanRef:
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: InstallPlan
+    name: install-gj6sg
+    namespace: postgresql-trial
+    resourceVersion: "13352559"
+    uid: 8af20e21-96b8-471a-8196-c06f1ca2f2e7
+  installedCSV: postgresoperator.v4.4.1
+  installplan:
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: InstallPlan
+    name: install-gj6sg
+    uuid: 8af20e21-96b8-471a-8196-c06f1ca2f2e7
+  lastUpdated: "2020-08-30T13:45:15Z"
+  state: AtLatestKnown
