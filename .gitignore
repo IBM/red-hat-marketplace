@@ -82,3 +82,6 @@ Session.vim
 .netrwhist
 *~
 tags
+
+# MkDocs
+site/

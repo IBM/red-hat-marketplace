@@ -1,0 +1,143 @@
+# Project information
+site_name: red-hat-marketplace
+site_url: https://ibm.github.io/red-hat-marketplace
+site_author: IBM Developer
+
+# Repository
+repo_name: red-hat-marketplace
+repo_url: https://github.com/ibm/red-hat-marketplace
+edit_uri: edit/master/docs
+
+# Navigation
+nav:
+  - Welcome:
+    - Introduction: README.md
+  - Getting Started:
+    - Pre-work: getting-started/pre-work.md
+  - Introduction:
+    - Red Hat Marketplace: modules/marketplace/rhm-introduction.md
+    - Marketplace Onboarding:
+      - About: modules/marketplace/rhm-onboarding.md
+      - Account setup: modules/marketplace/rhm-account-setup.md
+      - Cluster setup: modules/marketplace/rhm-cluster-setup.md
+      - Software Trials:
+        - About: modules/marketplace/rhm-software-trial.md
+        - Database:
+          - MongoDB: modules/marketplace/trials/rhm-mongodb-trial.md
+          - PostgreSQL: modules/marketplace/trials/rhm-postgresql-trial.md
+          - CockroachDB: modules/marketplace/trials/rhm-cockroachdb-trial.md
+        - AI/ML:
+          - Cortex Certifai: modules/marketplace/trials/rhm-cortexcertifai-trial.md
+          - EDDI: modules/marketplace/trials/rhm-eddi-trial.md
+        - Dev Tools:
+          - Red Hat Runtimes: modules/marketplace/trials/rhm-redhat-runtimes-trial.md
+          - CodeReady Workspaces: modules/setup/crw/operatorhub-crw-install.md
+          - OpenShift Pipelines: modules/setup/pipelines/operatorhub-pipelines-install.md
+#          - Joget Workflow: modules/marketplace/trials/rhm-joget-trial.md
+  - Cloud Developer Toolset:
+      - CodeReady Workspaces: 
+        - About: modules/toolset/crw/crw-summary.md
+        - Lab 0 Pre-work: modules/toolset/crw/lab-0/README.md
+        - Lab 1 Explore CRW: modules/toolset/crw/lab-1/explore-crw.md
+#        - Lab 2 Customize with Devfiles: modules/toolset/crw/lab-1/crw-rhm-mongodb.md
+        - Lab 3 Sharing Workspaces: modules/toolset/crw/lab-3/publish-workspaces.md
+      - CodeReady Containers:
+        - About: modules/toolset/crc/crc-summary.md
+        - Lab 0 Pre-work: modules/toolset/crc/lab-0/README.md
+        - Lab 1 Explore CRC: modules/toolset/crc/lab-1/explore-crc.md
+#        - Lab 2 RHM with CRC: modules/toolset/crc/lab-2/build-with-crc.md
+#        - Lab 3 Odo + CRC: modules/toolset/crc/lab-2/odo-with-crc.md
+  - Runtimes & Deployment:
+    - Stacks & Runtimes: 
+      - About: modules/runtimes/lecture-runtimes-stacks.md
+      - Pre-work: modules/runtimes/deployment/lab-0/README.md
+      - Lab 1 S2I & Templates: modules/runtimes/deployment/lab-1/s2i-templates.md
+#      - Lab 2 Deploy with Crunchy PostgreSQL: modules/runtimes/deployment/lab-2/deploy-curnchy.md
+    - CodeReady Toolchains: 
+#      - About: modules/runtimes/README.md
+      - Pre-work: modules/runtimes/toolchain/lab-0/README.md
+#      - Lab 3 Explore Toolchain: modules/runtimes/toolchain/lab-1/explore-crw.md
+#      - Lab 4 CI/CD with RHM: modules/runtimes/toolchain/lab-2/explore-crw.md
+  - Resources:
+#    - Instructor Guide: workshop-resources/admin-guide.md
+    - IBM Developer: https://developer.ibm.com
+    - RHM QuickStart: articles/quickstart/rhm-quickstart-roks-long.md
+    - Using CodeReady Containers with Marketplace: articles/rhm-crc/rhm-with-crc.md
+#    - Using CodeReady Containers with Marketplace (with CLI): articles/rhm-crc/rhm-with-crc-with-cli.md
+
+## DO NOT CHANGE BELOW THIS LINE
+
+# Copyright
+copyright: Copyright &copy; 2020 IBM Developer
+
+# Theme
+theme:
+  name: material
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  icon:
+    logo: material/library
+  features:
+    - navigation.tabs
+    #- navigation.instant
+    - navigation.expand
+  palette:
+    scheme: default
+    primary: blue
+    accent: blue
+
+# Plugins
+plugins:
+  - search
+
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ibm
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ibmdeveloper
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/ibm/
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/user/developerworks
+    - icon: fontawesome/brands/dev
+      link: https://dev.to/ibmdeveloper
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde

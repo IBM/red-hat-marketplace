@@ -47,10 +47,7 @@ This workshop has been tested on the following platforms:
 * OpenShift 4.4 on IBM Cloud, OpenShift 4.5 on AWS
 * **macOS**: Mojave \(10.14\), Catalina \(10.15\), latest version Chrome & Firefox.
 
-
 ## Credits
 
 * [Oliver Rodriguez](https://github.com/odrodrig)
 * [Amy Smathers](https://www.linkedin.com/in/amysmathers/)
-
-
