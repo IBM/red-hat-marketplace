@@ -11,20 +11,18 @@ Let's get trial subscription for few software that we will later use in the late
 **[CodeReady Workspaces](../setup/crw/operatorhub-crw-install.md)**: Install CodeReady Workspaces to setup the development environment.
 
 **[OpenShift Pipelines](modules/setup/pipelines/operatorhub-pipelines-install.md)**: Install OpenShift piplines for the CI/CD exercises.
- 
+
 ## Complete list of Software trials
 
- * Database
-    * [CockroachDB](trials/rhm-cockroachdb-trial.md)
-    * [MongoDB](trials/rhm-mongodb-trial.md)
-    * [PostgreSQL](trials/rhm-postgresql-trial.md)
+* Database
+  * [CockroachDB](trials/rhm-cockroachdb-trial.md)
+  * [MongoDB](trials/rhm-mongodb-trial.md)
+  * [PostgreSQL](trials/rhm-postgresql-trial.md)
 
 * AI/ML
-    * [Cortex Certifai](trials/rhm-cortexcertifai-trial.md)
-    * [EDDI](trials/rhm-eddi-trial.md)
-  
+  * [Cortex Certifai](trials/rhm-cortexcertifai-trial.md)
+  * [EDDI](trials/rhm-eddi-trial.md)
+
 * Dev Tools
-    * [Red Hat Runtimes](trials/rhm-redhat-runtimes-trial.md)
-    * [Joget Workflow](trials/rhm-joget-trial.md)
-
-
+  * [Red Hat Runtimes](trials/rhm-redhat-runtimes-trial.md)
+  * [Joget Workflow](trials/rhm-joget-trial.md)

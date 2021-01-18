@@ -248,4 +248,3 @@ If you run into problems installing the operator or working with any products an
 ## Conclusion
 
 In the follow-on series, we will dive deeper into how Marketplace helps you rapidly take an idea from a proof-of-concept or pilot to a production scale application. You will also get to see the benefits of having a single place to manage the software consumption for your hybrid cloud applications.
-

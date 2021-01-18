@@ -17,16 +17,18 @@ The cluster setup process will be completed by the cluster admins. This workshop
 Copy the key and save it in `TODO: your workspace` for later use prior to clicking the Save button.
 
 ## Add ROKS cluster
+
 Follow the steps below to add cluster to your workspace:
 
 ### Create namespace for Marketplace operator
+
 Open the web terminal and click on the expan icon to launch the terminal in a new brower tab.
 
 ![Web terminal](images/rhm-cluster-webterminal.png)
 
 Run the commands `oc version` and `jq --version` to ensure the prerequisties are install.
 
-```
+```bash
 Welcome to the IBM Cloud Kubernetes terminal, rojan!
 To get started, run ibmcloud ks
 
@@ -44,7 +46,7 @@ rojan@k8s-terminal ~ (⎈ rj-bp-rhm-demo/brg4n58w0ddv528hdnlg:default)$ jq --ver
 jq-master-v20190408-1671-g3fd4a8c851
 ```
 
-Login to the cluster using the admin credentials. Navigate to the cluster console using the link provided by the instructor. 
+Login to the cluster using the admin credentials. Navigate to the cluster console using the link provided by the instructor.
 
 ![Cluster login credentials](images/rhm-cluster-login.png)
 
@@ -52,34 +54,32 @@ Click on `Copy Login Command` and then on the `Display` link.
 
 Copy the login command and run it on the web terminal.
 
-```
+```bash
 johndoe@k8s-terminal ~ (⎈ default/c100-e-us-east-containers-cloud-ibm-com:32331/IAM#rojan@us.ibm.com:default)$ oc login --token=w2SZpqbEl0yzIUqF6H5c0vkf4i2DQZb_FZkuZ2ElJ1s --server=https://c100-e.us-east.containers.cloud.ibm.com:32331
 Logged into "https://c100-e.us-east.containers.cloud.ibm.com:32331" as "IAM#rojan@us.ibm.com" using the token provided.
 
 You have access to 60 projects, the list has been suppressed. You can list all projects with 'oc projects'
 
 Using project "default".
-johndoe@k8s-terminal ~ (⎈ default/c100-e-us-east-containers-cloud-ibm-com:32331/IAM#rojan@us.ibm.com:default)$ 
+johndoe@k8s-terminal ~ (⎈ default/c100-e-us-east-containers-cloud-ibm-com:32331/IAM#rojan@us.ibm.com:default)$
 
 ```
 
 ### Adding cluster
+
 Go to `Workspace > Clusters` and click on `Add Cluster` button.
 Enter a cluster name with user name prefix. Enter a pull secret with user name prefix and click on the `Generate Secret` button. Click on the `Download pull secret` link to save the secret for the later step.
 Click on the `Add Cluster` button to compelete the add cluster step.
 
 ![Add cluster](images/rhm-add-cluster.png)
 
-
 ### Register cluster
 
 ![Add cluster](images/rhm-add-cluster.png)
 
-
-
 Get pods for marketplace.
 
-```
+```bash
 oc get pods --namespace openshift-redhat-marketplace
 NAME                                                 READY   STATUS    RESTARTS   AGE
 clustersubscription-6b54d4766b-jn7jn                 1/1     Running   0          32d
@@ -94,35 +94,36 @@ watch-keeper-65447877d4-m42kc                        1/1     Running   0        
 ```
 
 ## Validate add clusters
+
 Can other participants see the clusters that were added?
 
 ## Uninstalling Marketplace operator
 
-```
+```bash
 curl -sL https://marketplace.redhat.com/provisioning/v1/scripts/uninstall-rhm-operator | bash
 ==================================================================================
-                  [INFO] Uninstall Red Hat Marketplace Operator...                
+                  [INFO] Uninstall Red Hat Marketplace Operator...
 ==================================================================================
 STEP 1/5: Deleting Marketplace Config...
 marketplaceconfig.marketplace.redhat.com "marketplaceconfig" deleted
- 
+
 STEP 2/5: Deleting Red Hat Marketplace Operator Secret...
 secret "rhm-operator-secret" deleted
- 
+
 STEP 3/5: Deleting Razee Deployment...
 NOTE: This could take several minutes to complete...
 razeedeployment.marketplace.redhat.com "rhm-marketplaceconfig-razeedeployment" deleted
- 
+
 STEP 4/5: Deleting Red Hat Marketplace Operator Subscription...
 subscription.operators.coreos.com "redhat-marketplace-operator" deleted
- 
+
 STEP 5/5: Deleting Red Hat Marketplace CSV...
 clusterserviceversion.operators.coreos.com "redhat-marketplace-operator.v0.1.5" deleted
- 
+
 Red Hat Marketplace Operator successfully uninstalled
 
 ```
 
-
 ## Using Marketplace with CRC
-Follow the instructions as shown [here](../../articles/rhm-crc/rhm-with-crc.md) to setup Marketplace on your local machine. 
+
+Follow the instructions as shown [here](../../articles/rhm-crc/rhm-with-crc.md) to setup Marketplace on your local machine.

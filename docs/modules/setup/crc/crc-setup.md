@@ -2,16 +2,19 @@
 
 CRC setup on Windows.
 
-### CRC install
+## CRC install
+
 Follow the instructions as shown in this [video](https://www.youtube.com/watch?v=yp8LXEKlGSQ)
 
-#### Download
+### Download
+
 File and pull secret.
 
-#### Install
+### Install
+
 Run the command `crc setup`.
 
-```
+```console
 PS C:\Utils\crc-windows-1.8.0-amd64> crc setup
 INFO Checking if oc binary is cached
 INFO Caching oc binary
@@ -27,4 +30,3 @@ INFO Checking if the Hyper-V virtual switch exist
 INFO Found Virtual Switch to use: Default Switch
 Setup is complete, you can now run 'crc start' to start the OpenShift cluster
 ```
-

@@ -1,7 +1,8 @@
 # Trying Red Hat Runtimes
 
 ## Prerequistites
-Log into the cluster from the IBM Cloud shell as the cluster admin. Create a project in your OpenShift cluster where you want the operator to be installed. 
+
+Log into the cluster from the IBM Cloud shell as the cluster admin. Create a project in your OpenShift cluster where you want the operator to be installed.
 
 ```text
 oc new-project redhat-runtimes
@@ -16,7 +17,6 @@ Go to the Marketplace catalog and search for `Red Hat Runtimes`. Select the `Red
 Next, the purchase summary will show the `Subscription term` and total cost is $0.00. Click `Start trial`. Go back to `Workspace > My Software` to view the list of purchased software.
 
 ![Runtimes free trial](images/rhm-runtimes-start-free-trial.png)
-
 
 ## Operator install
 
@@ -39,4 +39,5 @@ Red Hat Runtimes by default only installs the Datagrid operator. The operators n
 Red Hat Runtimes is now ready for use.
 
 ### Default Builder images
+
 ![Runtimes free trial](images/rhm-runtimes-default-builder-images.png)

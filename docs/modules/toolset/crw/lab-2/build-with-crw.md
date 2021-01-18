@@ -9,11 +9,11 @@ Complete lab 1 to continue with lab2.
 * Commit code changes
 * Pull code changes
 
-### Explore the Workspaces
+## Explore the Workspaces
+
 TODO: show the pod that runs the workspace.
 
-
-### Make code changes
+## Make code changes
 
 Open the file `views > home.pug` and change the title header `My Guestbook` to `My Guestbook with CRW`.
 
@@ -23,7 +23,8 @@ Rerun the application to view the changes in the preview panel.
 
 ![Preview changes](images/ex-crw-preview-changes.png)
 
-### Git Operations
+## Git Operations
+
 The Git features in the Theia editor works the same way as it does in the VSCode editor.
 Git commands can be run from the UI or builtin command palette or the nodejs terminal. We will use the UI for this exercise.
 
@@ -31,7 +32,7 @@ Swith to the git view by selecting the git icon from the left navigation. The ch
 
 ![Git view](images/ex-crw-change-list.png)
 
-Hover over the messages.js file and click on the `discard changes` icon. Confirm to discard changes. This leaves with one file with code changes. 
+Hover over the messages.js file and click on the `discard changes` icon. Confirm to discard changes. This leaves with one file with code changes.
 
 Hover over the file `home.pug` and click on the `+` icon to stage changes.
 
@@ -44,27 +45,25 @@ Enter your git userid and password. Verify the changes in the git repository.
 
 ![Push changes](images/ex-crw-code-push.png)
 
-
-#### Setup Git configuration
+### Setup Git configuration
 
 Open `File > Settings > Open Preferences > Git` from the menu.  Right click on the properties `user.email` and `user.name` and select `Add value`. Enter the email id and name used by your git account. These settings take effect at global level and will apply to all the new workspaces.
 
 ![CodeReady file changes](images/ex-crw-git-preferences.png)
 
- 
-### Define and exectue commands from the workspace
+## Define and exectue commands from the workspace
 
-The [Devfile](https://www.eclipse.org/che/docs/che-7/configuring-a-workspace-using-a-devfile/) defines the configuration of the workspace including the command definitions. 
+The [Devfile](https://www.eclipse.org/che/docs/che-7/configuring-a-workspace-using-a-devfile/) defines the configuration of the workspace including the command definitions.
 
 ![CodeReady Devfile](images/ex-crw-devfile.png)
 Note the commands are defined for `build, run, debug, test, dependency-anaysis, deploy to OpenShift`.
 
-#### Add a new command
+### Add a new command
 
 Open the tasks.json file from the file explorer view. Copy the json snippet to add the command to run the build.
 
-```
-  ,{
+```json
+  {
       "type": "che",
       "label": "build the application",
       "command": "npm install ",
@@ -75,15 +74,15 @@ Open the tasks.json file from the file explorer view. Copy the json snippet to a
   }
 ```
 
-### Make code changes.
+### Make more code changes
+
 Open the static resource file index.html file and update the text. Change the greetings by adding the text `CodeReady workspaces`, save the file and refresh the preview page to see the changes.
 
-```
+```bash
 src/main/resources/static/index.html
 ```
 
 ![CodeReady test code changes](images/ex-crw-code-change.png)
-
 
 ### Push the code changes back in the Git repo
 
@@ -96,32 +95,7 @@ Push changes
 
 ### Customize workspace to meet your project requirements
 
-
-
 ### Use of factory to share workspaces with your development team
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Create your CodeReady Workspace
 
@@ -156,4 +130,3 @@ And fill it out something like this.
 ![Save Build Config](https://github.com/IBM/red-hat-marketplace/tree/4c428f76a063399ed01254be463cf03cd730ce68/workshop/modules/cloud-development-toolset/crw/.gitbook/assets/nodejs-build-save.png)
 
 You will see this will not result in a new build. If you want to start a manual build you can do so by clicking `Start Build`. We will skip this for now and move on to the webhook part.
-
