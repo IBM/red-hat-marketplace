@@ -77,15 +77,15 @@ theme:
     text: IBM Plex Sans
     code: IBM Plex Mono
   icon:
-    logo: material/library
+    logo: fontawesome/brands/redhat
   features:
     - navigation.tabs
     #- navigation.instant
     - navigation.expand
   palette:
     scheme: default
-    primary: blue
-    accent: blue
+    primary: black
+    accent: red
 
 # Plugins
 plugins:
