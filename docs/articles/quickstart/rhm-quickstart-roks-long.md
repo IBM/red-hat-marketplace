@@ -2,7 +2,7 @@
 
 Goals of any developers in the Hybrid Cloud world is in creating solutions, quickly, that enable enterprises to react to evolving ecosystems. [Red Hat Marketplace](https://marketplace.redhat.com/) offers a unified experience to purchase containerized software from a comprehensive catalog backed by leading cloud vendors, deploy across all clouds using the OpenShift Container Platform, monitor software spend, track license usage and expirations.
 
-![RHM my account page](../.gitbook/assets/rhm-hybrid-cloud-deploy.png)
+![RHM my account page](../images/assets/rhm-hybrid-cloud-deploy.png)
 
 This article will walk through the process of account registration, cluster setup and software trial through Red Hat Marketplace.
 
@@ -10,15 +10,15 @@ This article will walk through the process of account registration, cluster setu
 
 Go to [Red Hat Marketplace](https://marketplace.redhat.com/) to view the catalog of containerized software ready to install into your OpenShift cluster. If you have an existing `IBM ID` or `Red Hat ID`, start by clicking the `Login` link provided at the top right corner of the page. Otherwise, click on the `Create account` button if you do not have one. \(The `Create account` process will provision an IBM ID.\)
 
-![RHM payment setup](../.gitbook/assets/rhm-landing-create-account.png)
+![RHM payment setup](../images/assets/rhm-landing-create-account.png)
 
 Fill in the information requested at the registration page. For Account type, select Company if you are registering the account for business purposes, else select Personal. Click Next.
 
-![RHM Registration](../.gitbook/assets/rhm-registration.png){: style="height:500px"}
+![RHM Registration](../images/assets/rhm-registration.png){: style="height:500px"}
 
 Payment options can be setup with either a credit card or an invoice. Using the invoice option requires you to have an `IBM Customer number` and a `Purchase order number`. Click `Next` and complete the registration.
 
-![RHM payment setup](../.gitbook/assets/rhm-payment-setup.png){: style="height:300px"}
+![RHM payment setup](../images/assets/rhm-payment-setup.png){: style="height:300px"}
 
 ## Add OpenShift cluster
 
@@ -30,15 +30,15 @@ OpenShift Cluster: For this article we have chosen to use a managed OpenShift cl
 
 Deployment Key: A deployment key is required to link your OpenShift cluster to the marketplace. Select the drop down from the top right corner and go to `My Account` page.
 
-![RHM my account page](../.gitbook/assets/rhm-myaccount.png){: style="height:250px"}
+![RHM my account page](../images/assets/rhm-myaccount.png){: style="height:250px"}
 
 Note that this page provides you access to all the account management functions such as account information, access permissions, spending, offers and keys. Select `Deployment keys` and then click on `Create key`.
 
-![RHM my account page](../.gitbook/assets/rhm-create-deployment-key.png){: style="height:400px"}
+![RHM my account page](../images/assets/rhm-create-deployment-key.png){: style="height:400px"}
 
 Copy the key and save it in a secure place for later use prior to clicking the `Save` button.
 
-![RHM my account page](../.gitbook/assets/rhm-deployment-key-save.png){: style="height:400px"}
+![RHM my account page](../images/assets/rhm-deployment-key-save.png){: style="height:400px"}
 
 Now, let's proceed with adding the OpenShift cluster. Select `Workspace > Clusters` and click on `Add cluster`
 
@@ -77,11 +77,11 @@ Red Hat Marketplace Operator successfully installed
 
 Click on `Add cluster` button to complete the add cluster step. The cluster should appear in the `Clusters` page with the status as `Registered`. \(wait 15 minutes for the registration to complete if the status shows `Agent not installed`\)
 
-![RHM cluster list](../.gitbook/assets/rhm-add-cluster-list.png){: style="height:300px"}
+![RHM cluster list](../images/assets/rhm-add-cluster-list.png){: style="height:300px"}
 
 Check the list of installed operators in your OpenShift cluster. Red Hat Marketplace operator should be one of them.
 
-![RHM operator list](../.gitbook/assets/rhm-operator-list.png)
+![RHM operator list](../images/assets/rhm-operator-list.png)
 
 One last step - if your cluster is running on IBM Cloud then run the following command to reload the worker nodes. This step may take 20-30 minutes. `ibmcloud ks worker reload --cluster <cluster-id> --worker <worker-node-name>`
 
@@ -102,7 +102,7 @@ Reach out to the Marketplace [technical support](https://marketplace.redhat.com/
 
 Let's see how the `Free Trial` option works by selecting an SQL Operator. Go to the Marketplace catalog and search for `CockroachDB`. Select the `CockraochDB` tile. The `CockraochDB` product page gives you an overview, documentation, and pricing options associated with the product selected. Click on `Free Trail` button.
 
-![RHM product free trial](../.gitbook/assets/rhm-cockroachdb-free-trial.png){: style="height:300px"}
+![RHM product free trial](../images/assets/rhm-cockroachdb-free-trial.png){: style="height:300px"}
 
 Next, the purchase summary will show the `Subscription term` and total cost is $0.00. Click `Start trial`. Go back to `Workspace > My Software` to view the list of purchased software.
 
@@ -114,25 +114,25 @@ oc new-project cockroachdb-test
 
 Select the `CockraochDB` tile and then select the `Operators` tab. Click on `Install Operator` button. Leave the default selection for `Update channel` and `Approval strategy`. Select the cluster and namespace scope as `cockroachdb-test` for the operator and click `Install`.
 
-![RHM product operator install](../.gitbook/assets/rhm-cockroachdb-operator-install-dialog.png){: style="height:500px"}
+![RHM product operator install](../images/assets/rhm-cockroachdb-operator-install-dialog.png){: style="height:500px"}
 
 A message as shown below appears at the top of your screen indicating the install process initiated in the cluster.
 
-![RHM product request initiate](../.gitbook/assets/rhm-operator-install-request-initiate.png)
+![RHM product request initiate](../images/assets/rhm-operator-install-request-initiate.png)
 
 Log into your OpenShift cluster and look under `Operators > Installed Operators` to confirm the install was successful. The operator should list under the project `cockroachdb-test`.
 
-![RHM product operartor install successful](../.gitbook/assets/rhm-cockroachdb-install-success.png)
+![RHM product operartor install successful](../images/assets/rhm-cockroachdb-install-success.png)
 
 ### Create dabase instance
 
 From the installed Operators page for CockroachDB, click on the link `CockroachDB` under Provided APIs.
 
-![RHM CockroachDB create instance](../.gitbook/assets/rhm-cockroachdb-instance-install.png)
+![RHM CockroachDB create instance](../images/assets/rhm-cockroachdb-instance-install.png)
 
 Click on `Create Cockroachdb` button. Accept the default YAML and click on `Create` button. \[Follow the instructions [here](https://www.cockroachlabs.com/docs/stable/orchestrate-a-local-cluster-with-kubernetes.html) to set up the database in a secure mode.\]
 
-![RHM CockroachDB create instance](../.gitbook/assets/rhm-cockroachdb-install-yaml.png)
+![RHM CockroachDB create instance](../images/assets/rhm-cockroachdb-install-yaml.png)
 
 CockroachDB pods should come up when the database install completes. Run the following commands to check the status.
 
@@ -233,17 +233,17 @@ Forwarding from [::1]:8080 -> 8080
 
 The page should load the `cluster overview`
 
-![RHM CockroachDB cluster overview](../.gitbook/assets/rhm-cockroachdb-cluster-overview.png)
+![RHM CockroachDB cluster overview](../images/assets/rhm-cockroachdb-cluster-overview.png)
 
 Click on `DATABASES` from the left navigation panel.
 
 jdbc:postgresql://127.0.0.1:26257/bank?sslmode=disable example-cockroachdb-public.cockroachdb-test.svc.cluster.local
 
-![RHM CockroachDB cluster overview](../.gitbook/assets/rhm-cockroachdb-cluster-database.png){: style="height:200px"}
+![RHM CockroachDB cluster overview](../images/assets/rhm-cockroachdb-cluster-database.png){: style="height:200px"}
 
 If you run into problems installing the operator or working with any products and have exhausted provided self-help options, the central support triage team is ready and available to assist as needed. Go to [https://marketplace.redhat.com/en-us/support](https://marketplace.redhat.com/en-us/support) and submit a support case with product and problem details.
 
-![RHM support case](../.gitbook/assets/rhm-support-case.png)
+![RHM support case](../images/assets/rhm-support-case.png)
 
 ## Conclusion
 
