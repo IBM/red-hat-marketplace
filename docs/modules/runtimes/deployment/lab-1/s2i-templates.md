@@ -9,13 +9,16 @@ In this lab you'll use these capabilities to deploy the SpringBoot Petclinic app
 ### Step 1: Logon into the OpenShift Web Console and to the OpenShift CLI
 
 1.1 Login into the OpenShift web console using the user credentials provided to you
-    * Access the OpenShift console via the url link provided by the workshop instructors
-    ![Login options](images/loginoptions.png)
-    * Login with the username and password provided by the workshop instructors
+
+* Access the OpenShift console via the url link provided by the workshop instructors
+
+![Login options](images/loginoptions.png)
+
+* Login with the username and password provided by the workshop instructors
 
 1.2 From the OpenShift web console click on your username in the upper right and select **Copy Login Command**
 
-   ![Copy Login Command](images/ss0.png)
+![Copy Login Command](images/ss0.png)
 
 1.3 You are prompted to login to the OpenShift console again. Repeat the same login procedure above to login.
 
@@ -29,9 +32,9 @@ In this lab you'll use these capabilities to deploy the SpringBoot Petclinic app
 
 1.8 Set an environment variable for your *studentid* based on your user identifier from the instructor (e.g. **user001**)
 
-    ```bash
-    export STUDENTID=userNNN
-    ```
+   ```bash
+   export STUDENTID=userNNN
+   ```
 
 1.9 Create a new OpenShift project for this lab
 
@@ -39,44 +42,43 @@ In this lab you'll use these capabilities to deploy the SpringBoot Petclinic app
    oc new-project pbw-$STUDENTID
    ```
 
-
 ### Step 2: Clone the WebSphere Liberty S2I image source, create a Docker image,  and push it to the OpenShift internal registry
 
 2.1 Clone the  the WebSphere Liberty S2I image source by issuing the following commands in the terminal window you just used to login via the CLI
 
-  ```
-   git clone https://github.com/IBMAppModernization/s2i-liberty-javaee7.git
-   cd s2i-liberty-javaee7
+  ```bash
+  git clone https://github.com/IBMAppModernization/s2i-liberty-javaee7.git
+  cd s2i-liberty-javaee7
   ```
 
 2.2 Get the hostname of your OpenShift internal registry so you can push images to it
 
-  ```
-   export INTERNAL_REG_HOST=`oc get route default-route --template='{{ .spec.host }}' -n openshift-image-registry`
+  ```bash
+  export INTERNAL_REG_HOST=`oc get route default-route --template='{{ .spec.host }}' -n openshift-image-registry`
   ```
 
 2.3 Create a new OpenShift project for this lab (**Note:** your project name must be unique. Combine your lab STUDENT ID with the prefix `pbw-` to create a unique project name like `pbw-user???` where `user???` is your username e.g. `user012`)
 
-  ```
-   oc new-project pbw-user???
+  ```bash
+  oc new-project pbw-user???
   ```
 
 2.4 Build the S2I Liberty image and tag it appropriately for the internal registry
 
-  ```
-   podman build -t $INTERNAL_REG_HOST/`oc project -q`/s2i-liberty-javaee7:1.0 .
+  ```bash
+  podman build -t $INTERNAL_REG_HOST/`oc project -q`/s2i-liberty-javaee7:1.0 .
   ```
 
 2.5 Login to the internal registry
 
-  ```
-   podman login -u `oc whoami` -p `oc whoami -t` $INTERNAL_REG_HOST
+  ```bash
+  podman login -u `oc whoami` -p `oc whoami -t` $INTERNAL_REG_HOST
   ```
 
 2.6 Push the S2I Liberty image to the internal registry
 
-  ```
-    podman push $INTERNAL_REG_HOST/`oc project -q`/s2i-liberty-javaee7:1.0
+  ```bash
+  podman push $INTERNAL_REG_HOST/`oc project -q`/s2i-liberty-javaee7:1.0
   ```
 
 ### Step 3: Install MariaDB from the OpenShift template catalog
@@ -88,7 +90,6 @@ In this lab you'll use these capabilities to deploy the SpringBoot Petclinic app
 3.2 Click on the **Database** tile
 
    ![Database tile](images/ss4.1.png)
-
 
 3.4 Click on  **MariaDB (Ephemeral)**
 
@@ -114,28 +115,27 @@ In this lab you'll use these capabilities to deploy the SpringBoot Petclinic app
 
    ![Status](images/ss7.png)
 
-
 ### Step 4: Clone the Github repo that contains the code for the Plants by WebSphere app
 
 4.1 From your terminal go back to your home directory
 
-  ```
-   cd ~
+  ```bash
+  cd ~
   ```
 
 4.2  From the client terminal window clone the Git repo  with  the following commands
 
-  ```
-   git clone https://github.com/IBMAppModernization/app-modernization-plants-by-websphere-jee6.git
-   cd app-modernization-plants-by-websphere-jee6
+  ```bash
+  git clone https://github.com/IBMAppModernization/app-modernization-plants-by-websphere-jee6.git
+  cd app-modernization-plants-by-websphere-jee6
   ```
 
-### Step 5: Install the Plants by WebSphere Liberty app using a template that utilizes S2I to build the app image   
+### Step 5: Install the Plants by WebSphere Liberty app using a template that utilizes S2I to build the app image
 
 5.1 Add the Plants by WebSphere Liberty app template to your OpenShift cluster
 
-  ```
-   oc create -f openshift/templates/s2i/pbw-liberty-template.yaml
+  ```bash
+  oc create -f openshift/templates/s2i/pbw-liberty-template.yaml
   ```
 
 5.2 In your Web console browser click on **+ Add** (top left)
@@ -181,7 +181,6 @@ In this lab you'll use these capabilities to deploy the SpringBoot Petclinic app
 ## Summary
 
 With even small simple apps requiring multiple OpenShift objects, templates greatly simplify the process of distributing OpenShift apps. S2I allows you to reuse the same builder image for apps on the same app server, avoiding the effort of having to create unique images for each app.
-
 
 ## Other resources
 

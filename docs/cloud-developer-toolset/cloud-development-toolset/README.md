@@ -11,4 +11,3 @@ In this exercise, you will learn how to use Red Hat CodeReady Workspace covering
 * Use of factory to share workspaces with your development team.
 
 ## Create your CodeReady Workspace
-

@@ -1,6 +1,7 @@
 # Trying CockroachDB
 
 ## Prerequistites
+
 Create a project in your OpenShift cluster where you want the operator to be installed. Prefix the project name with your workshop username.
 
 ```text
@@ -29,7 +30,6 @@ Log into your OpenShift cluster and look under `Operators > Installed Operators`
 
 ![Successful install](images/rhm-cockroachdb-install-success.png)
 
-
 ## Create Database
 
 From the installed Operators page for CockroachDB, click on the link `CockroachDB` under Provided APIs.
@@ -56,6 +56,7 @@ example-cockroachdb-1            1/1     Running     0          36m
 example-cockroachdb-2            1/1     Running     0          36m
 example-cockroachdb-init-l5m56   0/1     Completed   0          36m
 ```
+
 Now, let's create a user and a database. We will use the following to command to spin up a CockroachDB client.
 
 ```text
@@ -150,4 +151,4 @@ jdbc:postgresql://127.0.0.1:26257/bank?sslmode=disable example-cockroachdb-publi
 
 ## Conclusion
 
-The CockroachDB instance is now ready for use. 
+The CockroachDB instance is now ready for use.

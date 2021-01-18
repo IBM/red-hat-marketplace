@@ -1,7 +1,8 @@
 # Trying CockroachDB
 
 ## Prerequistites
-Log into the cluster from the IBM Cloud shell as the cluster admin. Create a project in your OpenShift cluster where you want the operator to be installed. 
+
+Log into the cluster from the IBM Cloud shell as the cluster admin. Create a project in your OpenShift cluster where you want the operator to be installed.
 
 ```text
 oc new-project cockroachdb-trial
@@ -29,7 +30,6 @@ Log into your OpenShift cluster and look under `Operators > Installed Operators`
 
 ![Successful install](images/rhm-cockroachdb-install-success.png)
 
-
 ## Create Database
 
 From the installed Operators page for CockroachDB, click on the link `CockroachDB` under Provided APIs.
@@ -56,7 +56,6 @@ example-cockroachdb-1            1/1     Running     0          36m
 example-cockroachdb-2            1/1     Running     0          36m
 example-cockroachdb-init-l5m56   0/1     Completed   0          36m
 ```
-
 
 ## Optional steps
 
@@ -154,4 +153,4 @@ jdbc:postgresql://127.0.0.1:26257/bank?sslmode=disable example-cockroachdb-publi
 
 ## Conclusion
 
-The CockroachDB instance is now ready for use. 
+The CockroachDB instance is now ready for use.

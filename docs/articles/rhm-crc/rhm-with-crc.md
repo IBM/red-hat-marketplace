@@ -2,7 +2,7 @@
 
 ## CodeReady Containers
 
-[CodeReady Containers](https://developers.redhat.com/products/codeready-containers/overview) is the quickest way for developers to get started with OpenShift 4.1 or newer clusters. It is designed to run on a local computer to simplify setup and testing to emulate the cloud development environment locally with all the tools needed to develop container-based apps. 
+[CodeReady Containers](https://developers.redhat.com/products/codeready-containers/overview) is the quickest way for developers to get started with OpenShift 4.1 or newer clusters. It is designed to run on a local computer to simplify setup and testing to emulate the cloud development environment locally with all the tools needed to develop container-based apps.
 
 [Red Hat Marketplace](https://developers.redhat.com/blog/2020/04/27/building-kubernetes-applications-on-openshift-with-red-hat-marketplace/) was created to help developers using Red Hat OpenShift, to build solutions and deploy them across hybrid cloud as well as developer's workstation running CodeReady Containers.
 
@@ -14,10 +14,9 @@ CodeReady Containers is delivered as a Red Hat Enterprise Linux virtual machine 
 
 The install process requires you to login with your Red Hat id and download the CodeReady Containers archive along with the [pull secret](https://cloud.redhat.com/openshift/install/crc/installer-provisioned) file. Follow the installation instructions as shown in this [article](https://developers.redhat.com/blog/2019/10/16/local-openshift/).
 
-
 The messages shown below indicate the `crc setup` command completed successfully.
 
-```
+```bash
 INFO Checking if oc binary is cached
 INFO Caching oc binary
 INFO Checking if podman remote binary is cached
@@ -47,7 +46,7 @@ Setup is complete, you can now run 'crc start' to start the OpenShift cluster
 
 After the setup is complete, start CodeReady Containers by running the command `crc start` or `crc start -p pull-secret.txt`. Ensure your VPN sessions are turned off as this can result in an improper start.
 
-```
+```bash
 crc start
 
 INFO Checking if oc binary is cached
@@ -83,17 +82,18 @@ Started the OpenShift cluster
 WARN The cluster might report a degraded or error state. This is expected since several operators have been disabled to lower the resource usage. For more information, please consult the documentation
 ```
 
-Note: 
+Note:
+
 - Save the login credentials for later use.
 - The cluster started in a degraded state. The difference between CodeReady Containers and a production OpenShift cluster is summarized [here](https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.11/html/getting_started_guide/introducing-codeready-containers_gsg#about-codeready-containers_gsg).
 
-
 Run the command below to ensure the correct `oc` is set up in the path:
-```
-eval $(crc oc-env)  
+
+```bash
+eval $(crc oc-env)
 ```
 
-Verify the cluster is running by running the command  `crc console` to open the cluster console. Login as admin using the credentials from the `crc start` command. 
+Verify the cluster is running by running the command  `crc console` to open the cluster console. Login as admin using the credentials from the `crc start` command.
 
 ![Admin Console](images/crc-admin-console.png)
 
@@ -107,7 +107,7 @@ OpenShift CLI and [jq](https://stedolan.github.io/jq/download/) plugins are the 
 
 Login as admin from the command window using the credentials from the `crc start` command.
 
-```
+```bash
 oc login -u kubeadmin -p 8rynV-SeYLc-h8Ij7-YPYcz https://api.crc.testing:6443
 
 The server uses a certificate signed by an unknown authority.
@@ -128,18 +128,18 @@ Select Workspace > Clusters and click on Add cluster. Enter a name for your Code
  Copy the install script command and then click on the `Add Cluster` button.
  Now, run the install script at the command window to install the Marketplace Operator into your cluster.
 
-```
+```bash
 curl -sL https://marketplace.redhat.com/provisioning/v1/scripts/install-rhm-operator | bash -s  <account-id> <cluster-uuid> <deployment-key>
-
 ```
-Note: 
+
+Note:
+
 - The account-id and cluster-uuid are pre-populated and use the deployment-key provisioned from your marketplace account.
 - The source code for Marketplace Operator is available at [https://github.com/redhat-marketplace/redhat-marketplace-operator](https://github.com/redhat-marketplace/redhat-marketplace-operator)
 
 Following messages indicate a successful install of the Marketplace operator:
 
-```
-
+```bash
 ==================================================================================
                     [INFO] Installing Red Hat Marketplace Operator...
 ==================================================================================
@@ -176,28 +176,27 @@ pod/watch-keeper-8668c5798c-jmjms condition met
 Red Hat Marketplace Operator successfully installed
 ```
 
-Few additional steps are required to make the cluster global pull secret work in CodeReady Containers. 
+Few additional steps are required to make the cluster global pull secret work in CodeReady Containers.
 
 - Run `oc get secret pull-secret -n openshift-config --output="jsonpath={.data.\.dockerconfigjson}" | base64 --decode` and copy the output.
 - Get the node name by running `oc get node`
-- Debug the node using `oc debug node/<nodename>` 
+- Debug the node using `oc debug node/<nodename>`
 - When the debug pod comes up, chroot /host
 - Replace the content in '/var/lib/kubelet/config.json' with the output copied earlier from the `oc get secret ..` command.
 - `exit` to exit debug pod
 - Run `crc stop` and then `crc start`
 
-
-```
+```bash
 oc get node
 
 NAME                 STATUS   ROLES           AGE   VERSION
 crc-m27h4-master-0   Ready    master,worker   9d    v1.17.1
 $ oc debug node/crc-m27h4-master-0
-                                                  
+
 Starting pod/crc-m27h4-master-0-debug ...
 To use host binaries, run `chroot /host`
 Pod IP: 192.168.126.11
-If you don't see a command prompt, try pressing enter.
+If you dont see a command prompt, try pressing enter.
 sh-4.2# chroot /host
 sh-4.4# vi /var/lib/kubelet/config.json
 sh-4.4#
@@ -213,7 +212,7 @@ This completes the cluster setup in the Marketplace. Marketplace products are re
 
 ### Install product
 
-The marketplace offers a wide variety of products across twelve categories. Let's see how a developer can tryout Cortex Certifai. 
+The marketplace offers a wide variety of products across twelve categories. Let's see how a developer can tryout Cortex Certifai.
 
 Create a project `cortex-certifai-test` in your CodeReady Containers cluster.
 
@@ -241,15 +240,12 @@ The operators can be installed directly from the cluster. The Red Hat Marketplac
 
 Note: `Marketplace` should appear as a filter parameter under `Product type` in the OpertorHub search options.
 
-
 ### Uninstalling an Operator
 
 Uninstall the Cortex Certifai operator by selecting the `Uninstall Operator`. The operator for the cluster will automatically delist from the Marketplace product operators page.
 
 ![Cerify Cortex Uninstall](images/crc-cortexcertifai-uninstall.png)
 
-
 ### Conclusion
 
 With the ability to install Red Hat Marketplace products on CodeReady Containers, developers get the flexibility to try and test Marketplace products on their workstations early in the application development lifecycle.
-

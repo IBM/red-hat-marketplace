@@ -1,9 +1,10 @@
 # Trying MongoDB
 
 ## Prerequistites
+
 Create a project in your OpenShift cluster where you want the operator to be installed. Prefix the project name with your workshop username.
 
-```text
+```bash
 oc new-project ##username##-mongodb
 ```
 
@@ -29,7 +30,6 @@ Log into your OpenShift cluster and look under `Operators > Installed Operators`
 
 ![Successful install](images/rhm-mongodbdb-install-success.png)
 
-
 ## Create Database
 
 From the installed Operators page for MongoDB, click on the link `MongoDB` under Provided APIs.
@@ -42,12 +42,12 @@ Click on `Create Cockroachdb` button. Accept the default YAML and click on `Crea
 
 MongoDB pods should come up when the database install completes. Run the following commands to check the status.
 
-```text
+```bash
 $ oc project mongodbdb-test
 Now using project "mongodbdb-test" on server "https://c100-e.us-east.containers.cloud.ibm.com:32345".
 ```
 
-```text
+```bash
 $ kubectl get pods
 NAME                             READY   STATUS      RESTARTS   AGE
 mongodbdb-7486949c78-kdvcm     1/1     Running     0          46m
@@ -56,9 +56,10 @@ example-mongodbdb-1            1/1     Running     0          36m
 example-mongodbdb-2            1/1     Running     0          36m
 example-mongodbdb-init-l5m56   0/1     Completed   0          36m
 ```
+
 Now, let's create a user and a database. We will use the following to command to spin up a MongoDB client.
 
-```text
+```bash
 kubectl run -it --rm mongodb-client \
 --image=mongodbdb/mongodb \
 --restart=Never \
@@ -66,22 +67,25 @@ kubectl run -it --rm mongodb-client \
 ./mongodb sql --insecure --host=example-mongodbdb-public.mongodbdb-test
 ```
 
-```text
+```bash
 $ kubectl run -it --rm mongodb-client \
 --image=mongodbdb/mongodb \
 --restart=Never \
 --command -- \
 ./mongodb sql --insecure --host=example-mongodbdb-public.mongodbdb-test
+```
 
 ## Access Database
 
-Now, let's view the results of the commands we ran in the earlier steps via the admin console. Console can be accessed at localhost wwith port forwarding.
+Now, let's view the results of the commands we ran in the earlier steps via the admin console. Console can be accessed at localhost with port forwarding.
 
-```text
+```bash
 kubectl port-forward example-mongodbdb-0 8080
 ```
 
-```text
+For example ...
+
+```bash
 $ kubectl port-forward example-mongodbdb-0 8080
 Forwarding from [::1]:8080 -> 8080
 ```
@@ -98,4 +102,4 @@ jdbc:mongodb://127.0.0.1:26257/bank?sslmode=disable example-mongodbdb-public.mon
 
 ## Conclusion
 
-The MongoDB instance is now ready for use. 
+The MongoDB instance is now ready for use.

@@ -1,12 +1,12 @@
 # Setup CodeReady Workspaces (CRW)
 
 ## Prerequistites
+
 Use the OpenShift cluster provided by the instructor for the installation.
 
 ### Install from OpenShift OperatorHub
 
 Go to the OperatorHub catalog in your OpenShift console and search for `CoreReady Workspaces`. Open the tile and click on the `Install` button.
-
 
 ![Find CRW operator](images/crw-search-operatorhub.png)
 
@@ -23,11 +23,12 @@ Leave default values and click on the `Create` button.
 ![Create CheCluster](images/crw-create-checluster.png)
 
 Check the pods listing as shown below:
-```
+
+```bash
 $ oc project openshift-workspaces
 Now using project "openshift-workspaces" on server "https://c107-e.us-south.containers.cloud.ibm.com:31301".
 
-$ oc get pods                                                       
+$ oc get pods
 NAME                                  READY   STATUS    RESTARTS   AGE
 codeready-6c95d97955-hntj5            1/1     Running   0          56m
 codeready-operator-555689655b-gsrjm   1/1     Running   0          76m
@@ -38,5 +39,3 @@ postgres-6b6fdfbf8-m9x2c              1/1     Running   0          62m
 ```
 
 CodeReady Workspaces is now ready for use!
-
-
