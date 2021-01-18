@@ -1,0 +1,8 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: mongodb-trial-og-rehat-marketplace
+  namespace: mongodb-trial
+spec:
+  targetNamespaces:
+  - mongodb-trial

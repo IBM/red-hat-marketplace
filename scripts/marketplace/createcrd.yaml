@@ -1,0 +1,9 @@
+apiVersion: marketplace.redhat.com/v1alpha1
+kind: MarketplaceConfig
+metadata:
+  name: marketplaceconfig
+  namespace: openshift-redhat-marketplace
+spec:
+  rhmAccountID: 5e616369cea4170013e06453
+  clusterUUID: rhm-workshop-ibmcloud
+  deploySecretName: rhm-operator-secret

@@ -1,0 +1,7 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: crw-test4
+spec:
+  finalizers:
+    - kubernetes

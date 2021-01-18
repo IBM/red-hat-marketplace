@@ -1,0 +1,26 @@
+apiVersion: crunchydata.com/v1
+kind: Pgcluster
+metadata:
+  name: rhmcrunchytrial
+  labels:
+    archive: 'false'
+  namespace: postgresql-trial
+spec:
+  port: '5432'
+  exporterport: '9187'
+  clustername: rhmpgcluster
+  usersecretname: pg-admin
+  pgbadgerport: '10000'
+  userlabels:
+    archive: 'false'
+  name: rhmpgsql
+  ccpimage: crunchy-postgres-ha
+  ccpimagetag: ubi7-12.4-4.4.1
+  PrimaryStorage:
+    accessmode: ReadWriteOnce
+    size: 1G
+    storageclass: standard
+    storagetype: dynamic
+  database: rhmpgdb
+  primarysecretname: pg-admin
+  rootsecretname: pg-admin

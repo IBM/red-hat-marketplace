@@ -1,0 +1,10 @@
+# Create Operator group for CodeReady Workspaces
+
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: og-#REPLACE-NS#
+  namespace: #REPLACE-NS#
+spec:
+  targetNamespaces:
+  - #REPLACE-NS#

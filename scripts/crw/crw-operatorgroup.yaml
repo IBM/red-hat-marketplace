@@ -1,0 +1,10 @@
+# Create Operator group for CodeReady Workspaces
+
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: og-crw-test4
+  namespace: crw-test4
+spec:
+  targetNamespaces:
+  - crw-test4

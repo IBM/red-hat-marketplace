@@ -1,0 +1,10 @@
+apiVersion: crunchydata.com/v1
+kind: Pgreplica
+metadata:
+  name: rhmpgreplica
+  labels:
+    app: rhm
+  namespace: postgresql-trial
+spec:
+  size: 2
+status: {}
