@@ -1,6 +1,6 @@
 # Cloud Development Tool set
-Introduction to the broad set of tools and technologies available to developers for their Cloud development projects. IDE choices along with supported plugins for OpenShift. Using development toolkits and runtimes.  
 
+Introduction to the broad set of tools and technologies available to developers for their Cloud development projects. IDE choices along with supported plugins for OpenShift. Using development toolkits and runtimes.
 
 ## The CodeReady Portfolio
 
@@ -8,10 +8,9 @@ Introduction to the broad set of tools and technologies available to developers 
 
 ### CodeReady Workspaces
 
-(CodeReady Workspaces](https://developers.redhat.com/products/codeready-workspaces/overview) is a collaborative Kubernetes-native development solution that delivers OpenShift workspaces and in-browser IDE for rapid cloud application development. 
+(CodeReady Workspaces](<https://developers.redhat.com/products/codeready-workspaces/overview>) is a collaborative Kubernetes-native development solution that delivers OpenShift workspaces and in-browser IDE for rapid cloud application development.
 
 ![CodeReady Workspaces](images/crw-landing.png)
-
 
 ## Local Development Environment
 
@@ -20,10 +19,10 @@ Introduction to the broad set of tools and technologies available to developers 
 ## Deploy and Runtimes
 
 ### CodeReady Containers and CDK
+
 CodeReady Containers brings a minimal, preconfigured OpenShift 4.1 or newer cluster to your local laptop or desktop computer for development and testing purposes. CodeReady Containers is delivered as a Red Hat Enterprise Linux virtual machine that supports native hypervisors for Linux, macOS, and Windows 10.
 
 [Installing CRC](https://developers.redhat.com/blog/2019/10/16/local-openshift/)
-
 
 ### odo
 

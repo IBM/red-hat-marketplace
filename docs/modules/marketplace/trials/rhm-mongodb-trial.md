@@ -4,7 +4,7 @@ Let's see how the `Free Trial` option works for a NoSQL database operator.
 
 ## Step 1 - Start free trial
 
-For this trail, we will use the OperatorHub path. Go to the `OperatorHub` page in the OpenShift cluster and search for `MongoDB`. In the `Provider Type`, select `Marketplace`. 
+For this trail, we will use the OperatorHub path. Go to the `OperatorHub` page in the OpenShift cluster and search for `MongoDB`. In the `Provider Type`, select `Marketplace`.
 
 ![OperatorHub search](images/rhm-operatorhub-mongodb-search.png)
 
@@ -21,11 +21,13 @@ Next, the purchase summary will show the `Subscription term` and total cost is $
 Open the IBM Cloud shell. Ensure you are logged into the OpenShift cluster with admin access.
 Run the script as shown below:
 
-```
+```bash
 source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/installMongodbOperator.sh)
 ```
+
 Expected output:
-```
+
+```bash
 rojan@cloudshell:~$ source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/installMongodbOperator.sh)
 Creating project for MongoDB install
 Now using project "mongodb-trial" on server "https://c107-e.us-south.containers.cloud.ibm.com:31301".
@@ -55,15 +57,17 @@ $ oc describe sub mongodb-enterprise-advanced-ibm-rhmp -n mongodb-trial | grep -
 ```
 
 This script did the follwing:
+
 1. Create a project called `mongodb-trial`.
 2. Create an Operator group.
 3. Create an Operator subscription.
 
-Verify this in the cluster `Installed Operators` page. 
+Verify this in the cluster `Installed Operators` page.
 ![MongoDB operator installed](images/rhm-mongodb-operator-installed.png)
 
 The pods list should show the operator pod runing
-```
+
+```bash
 rojan@cloudshell:~$ oc get pods
 NAME                                           READY   STATUS    RESTARTS   AGE
 mongodb-enterprise-operator-7dd689c784-6skk2   1/1     Running   0          33m
@@ -73,12 +77,13 @@ mongodb-enterprise-operator-7dd689c784-6skk2   1/1     Running   0          33m
 
 In the IBM Cloud shell, run the script as shown below:
 
-```
+```bash
 source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/installMongodbOperator.sh)
 ```
 
 Expected output:
-```
+
+```bash
 rojan@cloudshell:~$ source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/installMongodbOpsManager.sh)
 Creating secret ops-manager-admin ...
 secret/ops-manager-admin created
@@ -95,11 +100,13 @@ Status:
 ```
 
 This script does the follwing:
+
 1. Create a configmap.
 2. Create a MongoDB OpsManager deployment.
 
 Wait for all the pods to come up. The describe command should finally show the status as running.
-```
+
+```bash
 rojan@cloudshell:~$ oc describe om ops-manager | grep -A5 Status
 Status:
   Application Database:
@@ -110,7 +117,8 @@ Status:
 ```
 
 The pods should now list `ops-manager` pods with the status `Running`.
-```
+
+```bash
 rojan@cloudshell:~$ oc get pods
 NAME                                           READY   STATUS    RESTARTS   AGE
 mongodb-enterprise-operator-7dd689c784-6skk2   1/1     Running   0          82m
@@ -121,14 +129,14 @@ ops-manager-db-1                               1/1     Running   0          10m
 ops-manager-db-2                               1/1     Running   0          10m
 ```
 
-
 Run this command and verify the URL points to `http://ops-manager-svc.mongodb-trial.svc.cluster.local:8080`
 This value is later used in the MongoDB install script.
 
-```
+```bash
 oc describe om ops-manager | grep URL | awk '{print $2}'
 ```
-```
+
+```bash
 rojan@cloudshell:~$ oc describe om ops-manager | grep URL | awk '{print $2}'
 
 http://ops-manager-svc.mongodb-trial.svc.cluster.local:8080
@@ -138,16 +146,17 @@ http://ops-manager-svc.mongodb-trial.svc.cluster.local:8080
 
 In the IBM Cloud shell, run the script as shown below:
 
-```
+```bash
 source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/installMongodb.sh)
 ```
 
 Expected output:
-```
+
+```bash
 rojan@cloudshell:~$ source <(curl -s https://raw.githubusercontent.com/IBM/red-hat-marketplace/master/workshop/scripts/mongodb/installMongodb.sh)
-Creating a config map 
+Creating a config map
 configmap/mongodb-cm created
-Creating a config map 
+Creating a config map
 mongodb.mongodb.com/rhm-mongodb-replica-set created
 Name:         rhm-mongodb-replica-set
 Namespace:    mongodb-trial
@@ -174,12 +183,13 @@ Events:      <none>
 ```
 
 This script does the follwing:
+
 1. Create a configmap.
 2. Create a MongoDB deployment.
 
 The pods should now list `mongodb-operator-`, `ops-manager-` and `mongob-replica-` pods with the status `Running`.
 
-```
+```bash
 rojan@cloudshell:~$ oc get pods
 NAME                                           READY   STATUS    RESTARTS   AGE
 mongodb-enterprise-operator-7dd689c784-6skk2   1/1     Running   0          118m
@@ -192,12 +202,13 @@ rhm-mongodb-replica-set-0                      1/1     Running   0          5m50
 rhm-mongodb-replica-set-1                      1/1     Running   0          4m
 rhm-mongodb-replica-set-2                      1/1     Running   0          2m20s
 ```
+
 ## Conclusion
 
 MongoDB is now avialble locally in the cluster at the endpoint:
 `mongodb://rhm-mongodb-replica-set-svc.mongodb-trial.svc.cluster.local:27017`
-This MongoDB server instance is now ready for use. 
-
+This MongoDB server instance is now ready for use.
 
 ## Other references
+
 MongoDB [installation](https://github.com/mongodb/mongodb-enterprise-kubernetes/blob/master/docs/openshift-marketplace.md) guide.

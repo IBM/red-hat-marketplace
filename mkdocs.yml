@@ -35,7 +35,7 @@ nav:
           - OpenShift Pipelines: modules/setup/pipelines/operatorhub-pipelines-install.md
 #          - Joget Workflow: modules/marketplace/trials/rhm-joget-trial.md
   - Cloud Developer Toolset:
-      - CodeReady Workspaces: 
+      - CodeReady Workspaces:
         - About: modules/toolset/crw/crw-summary.md
         - Lab 0 Pre-work: modules/toolset/crw/lab-0/README.md
         - Lab 1 Explore CRW: modules/toolset/crw/lab-1/explore-crw.md
@@ -48,12 +48,12 @@ nav:
 #        - Lab 2 RHM with CRC: modules/toolset/crc/lab-2/build-with-crc.md
 #        - Lab 3 Odo + CRC: modules/toolset/crc/lab-2/odo-with-crc.md
   - Runtimes & Deployment:
-    - Stacks & Runtimes: 
+    - Stacks & Runtimes:
       - About: modules/runtimes/lecture-runtimes-stacks.md
       - Pre-work: modules/runtimes/deployment/lab-0/README.md
       - Lab 1 S2I & Templates: modules/runtimes/deployment/lab-1/s2i-templates.md
 #      - Lab 2 Deploy with Crunchy PostgreSQL: modules/runtimes/deployment/lab-2/deploy-curnchy.md
-    - CodeReady Toolchains: 
+    - CodeReady Toolchains:
 #      - About: modules/runtimes/README.md
       - Pre-work: modules/runtimes/toolchain/lab-0/README.md
 #      - Lab 3 Explore Toolchain: modules/runtimes/toolchain/lab-1/explore-crw.md
@@ -77,15 +77,15 @@ theme:
     text: IBM Plex Sans
     code: IBM Plex Mono
   icon:
-    logo: material/library
+    logo: fontawesome/brands/redhat
   features:
     - navigation.tabs
     #- navigation.instant
     - navigation.expand
   palette:
     scheme: default
-    primary: blue
-    accent: blue
+    primary: black
+    accent: red
 
 # Plugins
 plugins:

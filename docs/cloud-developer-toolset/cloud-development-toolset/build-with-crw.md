@@ -43,4 +43,3 @@ And fill it out something like this.
 ![Save Build Config](https://github.com/IBM/red-hat-marketplace/tree/4c428f76a063399ed01254be463cf03cd730ce68/workshop/modules/cloud-development-toolset/crw/.gitbook/assets/nodejs-build-save.png)
 
 You will see this will not result in a new build. If you want to start a manual build you can do so by clicking `Start Build`. We will skip this for now and move on to the webhook part.
-

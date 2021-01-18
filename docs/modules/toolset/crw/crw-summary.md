@@ -1,4 +1,4 @@
-#  Open Source Cloud Native Development Toolset
+# Open Source Cloud Native Development Toolset
 
 ## Description
 
@@ -9,4 +9,5 @@
   frameborder="0"></iframe>
 
 ## Link to presentation (lecutre material)
+
 ## References

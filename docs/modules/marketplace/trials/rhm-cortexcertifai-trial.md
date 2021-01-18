@@ -1,6 +1,7 @@
 # Trying Cortex Certifai
 
 ## Prerequistites
+
 Create a project in your OpenShift cluster where you want the operator to be installed. Prefix the project name with your workshop username.
 
 ```text
@@ -11,7 +12,7 @@ oc new-project ##username##-cortex-certifai
 
 ### Operator install
 
-The marketplace offers a wide variety of products across twelve categories. Let's see how a developer can try Cortex Certifai. 
+The marketplace offers a wide variety of products across twelve categories. Let's see how a developer can try Cortex Certifai.
 
 Create a project `cortex-certifai-test` in your CodeReady Containers cluster.
 
@@ -39,10 +40,8 @@ The operators can be installed directly from the cluster. The Red Hat Marketplac
 
 Note: `Marketplace` should appear as a filter parameter under `Product type` in the OpertorHub search options.
 
-
 ### Uninstalling an Operator
 
 Uninstall the Cortex Certifai operator by selecting the `Uninstall Operator`. The operator for the cluster will automatically delist from the Marketplace product operators page.
 
 ![Cerify Cortex Uninstall](images/crc-cortexcertifai-uninstall.png)
-

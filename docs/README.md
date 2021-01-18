@@ -10,15 +10,19 @@ The goals of this workshop are:
 Enterprises who have started their cloud journey and looking at ways to optimize their developer and operational experience will greatly benefit from this workshop.
 
 ## Prerequisites
-Required: 
-- Working knowledge of containers and container orchestration with Kubernetes.
-- Workstation or laptop with latest version Chrome or Firefox.
 
-Desired: 
-- Knowledge of Kubernetes extensions and operators.
-- Experience with software trials and purchases.
+Required:
+
+* Working knowledge of containers and container orchestration with Kubernetes.
+* Workstation or laptop with latest version Chrome or Firefox.
+
+Desired:
+
+* Knowledge of Kubernetes extensions and operators.
+* Experience with software trials and purchases.
 
 ## Agenda
+
 |  |  |
 | :--- | :--- |
 | [Lecture 1: Introduction](modules/marketplace/rhm-introduction.md) (20 minutes) | What is Red Hat Marketplace? |
@@ -27,16 +31,16 @@ Desired:
 | [&nbsp;&nbsp;&nbsp;&nbsp; Exercise: Onboarding account](modules/marketplace/rhm-account-setup.md) (20 minutes)| Account setup |
 | [&nbsp;&nbsp;&nbsp;&nbsp; Exercise: Cluster setup](modules/marketplace/rhm-cluster-setup.md) (20 minutes)| Cluster setup |
 | [&nbsp;&nbsp;&nbsp;&nbsp; Exercise: Software trials](modules/marketplace/rhm-software-trial.md)(30 minutes)| Consuming certified software. |
-| [Lecture 2: Cloud Development Toolset]() (20 minutes)| Cloud native development toolset for OpenShift. |
+| [Lecture 2: Cloud Development Toolset](modules/marketplace/trials/rhm-redhat-runtimes-trial.md) (20 minutes)| Cloud native development toolset for OpenShift. |
 | Lunch Break (60 minutes)|  |
-| [Lecture 3: CodeReady Workspaces]() (20 minutes) | Developer experience with CodeReady Workspaces (CRW) |
+| [Lecture 3: CodeReady Workspaces](modules/toolset/crw/crw-summary.md) (20 minutes) | Developer experience with CodeReady Workspaces (CRW) |
 | [&nbsp;&nbsp;&nbsp;&nbsp; Exercise: Exploring CodeReady Workspaces](modules/toolset/crw/lab-1/explore-crw.md) (30 minutes) | Development with Codeready workspaces. |
 | [&nbsp;&nbsp;&nbsp;&nbsp; Exercise: CRW with Devfiles](modules/toolset/crw/lab-2/crw-defiles.md) (30 minutes) | Customizing Codeready workspaces. |
 | [&nbsp;&nbsp;&nbsp;&nbsp; Exercise: Sharing Workspaces](modules/toolset/crw/lab-3/publish-workspaces.md) (20 minutes) | Reuse workspaces across projects. |
 | Break (10 minutes)|  |
-| [Lecture 4: Runtimes & Stacks]() (20 minutes) | OpenShift Runtimes and Application Stacks |
-| [&nbsp;&nbsp;&nbsp;&nbsp; Exercise: S2I & Templates](modules/runtimes/deployment/lab-1/s2i-templates.md) (30 minutes) | 
-| [Lecture 5: CI/CD with OpenShift Pipelines]()(20 minutes) | OpenShift Runtimes and Application Stacks |
+| [Lecture 4: Runtimes & Stacks](modules/runtimes/lecture-runtimes-stacks.md) (20 minutes) | OpenShift Runtimes and Application Stacks |
+| [&nbsp;&nbsp;&nbsp;&nbsp; Exercise: S2I & Templates](modules/runtimes/deployment/lab-1/s2i-templates.md) (30 minutes) |
+| [Lecture 5: CI/CD with OpenShift Pipelines](modules/runtimes/toolchain/lab-0/README.md)(20 minutes) | OpenShift Runtimes and Application Stacks |
 | [&nbsp;&nbsp;&nbsp;&nbsp; Exercise: Deploy with pipelines](modules/runtimes/exercise-deploy-with-pipelines.md) (30 minutes)| Deploying application with customized stack and pipelines |
 | Break (10 minutes)|  |
 | [Demo: Distributed tracing](modules/consumption/demo-deploy-elk.md) (20 minutes) | Deploy ELK stack for centralized logging from Marketplace catalog |
@@ -44,6 +48,7 @@ Desired:
 ## Compatability
 
 This workshop has been tested on the following platforms:
+
 * OpenShift 4.4 on IBM Cloud, OpenShift 4.5 on AWS
 * **macOS**: Mojave \(10.14\), Catalina \(10.15\), latest version Chrome & Firefox.
 
